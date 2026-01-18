@@ -1,0 +1,332 @@
+:root {
+    --main-bg-color: black;
+    --main-text-color: #F5F5F5;
+    --main-font-family: "Proxima Nova", system-ui, sans-serif;
+    --muted-text-color: #A3B2C2;
+    --accent-text-color: #FECE00;
+
+    --primary-button-bg: #FECE00;
+    --cta-button-bg: linear-gradient(180deg, #FECE00 0%, #F5F5F5 100%);
+    --main-button-text: #101010;
+    --main-button-radius: 6em;
+    --button-padding: 1rem 2.5rem;
+
+    --card-bg: #2A2B2D;
+    --card-radius: 2rem;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: var(--main-font-family);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem;
+    gap: 3rem;
+}
+
+nav a {
+    color: var(--main-text-color);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+nav a.active {
+    color: var(--accent-text-color);
+}
+
+main {
+    margin: 0 5rem;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h1 ~ p {
+    font-size: 1.25rem;
+}
+
+.join-button {
+    padding: var(--button-padding);
+    background: var(--primary-button-bg);
+    color: var(--main-bg-color);
+    font-size: 1.25rem;
+    border-radius: var(--main-button-radius);
+    margin-top: 2rem;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.vision-mission {
+    text-align: center;
+    padding: 4rem 5rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 16rem);
+    justify-content: center;
+    gap: 2rem;
+}
+
+.vision-mission h2 {
+    grid-column: 1 / -1;
+}
+
+.vision-mission article {
+    background-color: var(--card-bg);
+    border-radius: var(--card-radius);
+    min-height: 22rem;
+
+    width: 16rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.vision-mission article h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-top: 3rem;
+}
+
+.vision-mission article p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 12rem;
+    margin: 0;
+}
+
+.achieve {
+    padding: 4rem 2rem;
+}
+
+.achieve h2 {
+    text-align: center;
+    margin: 0 0 4rem;
+}
+
+.achieve-card {
+    max-width: 50rem;
+    margin: 0 auto;
+
+    background-color: var(--card-bg);
+    border-radius: var(--card-radius);
+
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.achieve-img{
+    
+}
+
+.achieve-content h3{
+    margin: 0 0 1.75rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.achieve-content li{
+    margin: 0 0 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.achieve-content li::marker{
+    color: var(--accent-text-color);
+}
+
+.achieve-content li strong{
+    color: var(--accent-text-color);
+    font-weight: 500;
+}
+
+.recruitment {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.recruitment h2 strong {
+    color: var(--accent-text-color);
+}
+
+.recruitment p{
+    font-size: 1.25rem;
+    color: var(--muted-text-color);
+}
+
+.master-plan {
+    padding: 4rem 6rem;
+
+    max-width: 60rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.mp-steps {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mp-steps li {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+
+    padding: 2.5rem 2rem;
+    min-height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    font-size: 1.5rem;
+    max-width: 24rem;
+}
+
+.mp-side h2 {
+    margin: 0 0 1.75rem;
+    line-height: 1.2;
+}
+
+.mp-side button {
+    background: var(--primary-button-bg);
+    color: var(--main-button-text);
+    border: 0;
+    padding: var(--button-padding);
+    border-radius: var(--main-button-radius);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.why-ucsd {
+    padding: 3rem 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.why-ucsd > h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.why-ucsd > article {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+
+    padding: 2rem;
+    min-height: 18rem;
+
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 1.75rem;
+    align-items: center;
+}
+
+.why-ucsd > article img {
+
+}
+
+.wu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+    height: 100%;  
+}
+
+.wu-content h3 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.wu-content p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    max-width: 26rem;
+}
+
+.latest-blog {
+    padding: 4rem 2rem;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.blog-card {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+
+    padding: 2rem;
+    min-height: 18rem;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.blog-card img {
+
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.blog-content h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.blog-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 26rem;
+    color: var(--muted-text-color);
+}
+
+.blog-content a {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: white;
+}
