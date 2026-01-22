@@ -1,19 +1,11 @@
-import { Link } from 'react-router-dom'
+import HeroSection from '../components/HeroSection'
 
 export default function Home() {
   return (
     <>
-      <h1 className="text-8xl font-bold">TITLE</h1>
-      <p className="text-xl mt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <HeroSection />
 
-      <Link to="/join" className="btn-primary inline-block mt-8">
-        Join Us
-      </Link>
-
-      <section className="vision-mission text-center py-16 px-20 grid grid-cols-3 justify-center gap-8 max-w-5xl mx-auto">
+      <section id="projects" className="vision-mission text-center py-16 px-20 grid grid-cols-3 justify-center gap-8 max-w-5xl mx-auto">
         <h2 className="col-span-3 text-5xl font-bold">A Future Worth Building</h2>
 
         <article className="card min-h-[22rem] w-64 flex flex-col items-center justify-start gap-4">
