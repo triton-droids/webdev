@@ -36,7 +36,7 @@ export default function NavDropdown({
           isOpen
             ? 'bg-card-bg text-main-text'
             : dropdown.some((d) => isActive(d.to))
-              ? 'text-accent font-semibold'
+              ? 'text-accent'
               : 'text-main-text hover:text-accent'
         }`}
       >

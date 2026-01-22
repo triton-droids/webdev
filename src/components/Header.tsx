@@ -76,7 +76,7 @@ export default function Header() {
                   to={item.to || '#'}
                   className={`flex items-center px-4 py-2 rounded-lg text-main-text no-underline transition-colors ${
                     isActive(item.to || '')
-                      ? 'text-accent font-semibold'
+                      ? 'text-accent'
                       : 'hover:text-accent'
                   }`}
                 >
