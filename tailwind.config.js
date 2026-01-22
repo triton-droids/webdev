@@ -14,6 +14,8 @@ export default {
         'card-bg': '#2A2B2D',
         'button-text': '#101010',
         'logo-blue': '#3B82F6',
+        'hover-bg': '#B3C1D6',
+        'hover-text': '#2D2D2D',
       },
       fontFamily: {
         sans: ['"Proxima Nova"', 'system-ui', 'sans-serif'],

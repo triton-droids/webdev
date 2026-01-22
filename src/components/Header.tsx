@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import logo from '../assets/logo.png';
+import NavDropdown, { DropdownMenu } from './NavDropdown';
 
 interface DropdownItem {
   to: string;
@@ -37,7 +38,12 @@ export default function Header() {
     },
     {
       label: 'Projects',
-      dropdown: [{ to: '/projects', label: 'All Projects' }],
+      // TODO: Add project paths to the dropdown items
+      dropdown: [
+        { to: '/projects', label: 'Humanoid Robot' },
+        { to: '/projects', label: 'Triton Pupper' },
+        { to: '/projects', label: 'RoboCup' },
+      ],
     },
     { to: '/sponsorship', label: 'Sponsorship' },
   ];
@@ -58,37 +64,13 @@ export default function Header() {
           {navItems.map((item) => (
             <div key={item.label} className="relative">
               {item.dropdown ? (
-                <div
-                  className="relative"
+                <NavDropdown
+                  label={item.label}
+                  dropdown={item.dropdown}
+                  isOpen={openDropdown === item.label}
                   onMouseEnter={() => setOpenDropdown(item.label)}
-                >
-                  <button
-                    className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-colors ${
-                      openDropdown === item.label
-                        ? 'bg-card-bg text-main-text'
-                        : item.dropdown.some((d) => isActive(d.to))
-                          ? 'text-accent font-semibold'
-                          : 'text-main-text hover:text-accent'
-                    }`}
-                  >
-                    {item.label}
-                    <svg
-                      className={`w-4 h-4 transition-transform ${
-                        openDropdown === item.label ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                  onItemClick={() => setOpenDropdown(null)}
+                />
               ) : (
                 <Link
                   to={item.to || '#'}
@@ -114,39 +96,14 @@ export default function Header() {
       </nav>
 
       {openDropdown && (
-        <div className="px-8 pb-4">
-          <div className="flex gap-6 justify-center">
-            {navItems
-              .find((item) => item.label === openDropdown)
-              ?.dropdown?.map((dropdownItem) => (
-                <Link
-                  key={dropdownItem.to}
-                  to={dropdownItem.to}
-                  className={`w-96 flex items-center gap-2 px-4 py-2 bg-card-bg rounded-lg text-main-text no-underline transition-colors whitespace-nowrap ${
-                    isActive(dropdownItem.to)
-                      ? 'text-accent'
-                      : 'hover:text-accent'
-                  }`}
-                  onClick={() => setOpenDropdown(null)}
-                >
-                  {dropdownItem.label}
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
-              ))}
-          </div>
-        </div>
+        <DropdownMenu
+          label={openDropdown}
+          dropdown={
+            navItems.find((item) => item.label === openDropdown)?.dropdown || []
+          }
+          isOpen={true}
+          onItemClick={() => setOpenDropdown(null)}
+        />
       )}
     </header>
   );

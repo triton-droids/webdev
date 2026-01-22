@@ -17,3 +17,15 @@
     @apply bg-card-bg rounded-card;
   }
 }
+
+@layer utilities {
+  .group:hover .spacer {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .group:hover svg {
+    margin-left: 0;
+  }
+}
+
