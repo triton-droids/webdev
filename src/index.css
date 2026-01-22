@@ -10,10 +10,21 @@
 
 @layer components {
   .btn-primary {
-    @apply px-10 py-4 bg-accent text-button-text text-xl rounded-button;
+    @apply px-10 py-4 bg-yellow-400 text-button-text text-xl rounded-button;
   }
-  
+
   .card {
-    @apply bg-card-bg rounded-card;
+    @apply bg-zinc-800 rounded-card;
+  }
+}
+
+@layer utilities {
+  .group:hover .spacer {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .group:hover svg {
+    margin-left: 0;
   }
 }

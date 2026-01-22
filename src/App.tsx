@@ -1,12 +1,12 @@
-import { Routes, Route } from 'react-router-dom'
-import Layout from './components/Layout'
-import Home from './pages/Home'
-import Join from './pages/Join'
-import Team from './pages/Team'
-import Projects from './pages/Projects'
-import Sponsorship from './pages/Sponsorship'
-import Advisor from './pages/Advisor'
-import Alumni from './pages/Alumni'
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Join from './pages/Join';
+import Team from './pages/Team';
+import Projects from './pages/Projects';
+import Sponsorship from './pages/Sponsorship';
+import Advisor from './pages/Advisor';
+import Alumni from './pages/Alumni';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route path="/alumni" element={<Alumni />} />
       </Routes>
     </Layout>
-  )
+  );
 }
 
-export default App
+export default App;

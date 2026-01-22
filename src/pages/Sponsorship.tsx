@@ -6,12 +6,12 @@ export default function Sponsorship() {
       <article className="sponsor-info">
         <h2 className="text-5xl font-bold">No contribution is too small.</h2>
         <p className="text-xl leading-relaxed">
-          Be a part of transforming the future of robotics at UCSD! Triton Droids
-          is embarking on a mission to create a state-of-the-art humanoid robot
-          that will redefine technology and innovation. Your support will enable
-          students to acquire practical experience and engage in pioneering
-          research. Together, we can cultivate the next wave of robotics and
-          inspire the leaders of tomorrow!
+          Be a part of transforming the future of robotics at UCSD! Triton
+          Droids is embarking on a mission to create a state-of-the-art humanoid
+          robot that will redefine technology and innovation. Your support will
+          enable students to acquire practical experience and engage in
+          pioneering research. Together, we can cultivate the next wave of
+          robotics and inspire the leaders of tomorrow!
         </p>
       </article>
 
@@ -25,5 +25,5 @@ export default function Sponsorship() {
         </p>
       </section>
     </>
-  )
+  );
 }

@@ -3,9 +3,9 @@ export default function Team() {
     <>
       <h1 className="text-8xl font-bold">MEET THE TEAM</h1>
       <p className="text-xl mt-4">
-        Meet our talented team! Each member brings unique skills and experiences,
-        contributing to our collective success. Learn more about their
-        backgrounds and expertise below.
+        Meet our talented team! Each member brings unique skills and
+        experiences, contributing to our collective success. Learn more about
+        their backgrounds and expertise below.
       </p>
       <img alt="Team photo" />
 
@@ -27,5 +27,5 @@ export default function Team() {
         <h2 className="text-5xl font-bold">Robothon Chairs</h2>
       </section>
     </>
-  )
+  );
 }
