@@ -1,19 +1,15 @@
 import { Link } from 'react-router-dom';
+import HeroSection from '../components/HeroSection';
 
 export default function Home() {
   return (
     <>
-      <h1 className="text-8xl font-bold">TITLE</h1>
-      <p className="text-xl mt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <HeroSection />
 
-      <Link to="/join" className="btn-primary inline-block mt-8">
-        Join Us
-      </Link>
-
-      <section className="vision-mission text-center py-16 px-20 grid grid-cols-3 justify-center gap-8 max-w-5xl mx-auto">
+      <section
+        id="projects"
+        className="vision-mission text-center py-16 px-20 grid grid-cols-3 justify-center gap-8 max-w-5xl mx-auto"
+      >
         <h2 className="col-span-3 text-5xl font-bold">
           A Future Worth Building
         </h2>
@@ -161,7 +157,7 @@ export default function Home() {
               The Advanced Robotics and Control Lab (ARClab) develops
               intelligent robots for medical automation, biomimetic systems, and
               planetary exploration, using interdisciplinary techniques to
-              enhance adaptability and decision-making
+              enhance adaptability and decision-making.
             </p>
             <a className="text-main-text cursor-pointer">Read More</a>
           </div>
@@ -173,7 +169,8 @@ export default function Home() {
             <p className="m-0 leading-relaxed text-base max-w-[26rem]">
               UCSD&apos;s top-tier faculty and highly innovative student body
               create the perfect environment for building humanoid robots,
-              blending expertise in AI, robotics, and interdisciplinary research
+              blending expertise in AI, robotics, and interdisciplinary
+              research.
             </p>
             <a className="text-main-text cursor-pointer">Read More</a>
           </div>
