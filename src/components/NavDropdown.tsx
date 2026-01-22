@@ -34,10 +34,10 @@ export default function NavDropdown({
       <button
         className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-colors ${
           isOpen
-            ? 'bg-card-bg text-main-text'
+            ? 'bg-zinc-800 text-main-text'
             : dropdown.some((d) => isActive(d.to))
-              ? 'text-accent'
-              : 'text-main-text hover:text-accent'
+              ? 'text-yellow-400 hover:text-yellow-400'
+              : 'text-main-text hover:text-yellow-400'
         }`}
       >
         {label}

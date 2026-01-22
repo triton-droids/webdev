@@ -74,10 +74,10 @@ export default function Header() {
               ) : (
                 <Link
                   to={item.to || '#'}
-                  className={`flex items-center px-4 py-2 rounded-lg text-main-text no-underline transition-colors ${
+                  className={`flex items-center px-4 py-2 rounded-lg no-underline transition-colors ${
                     isActive(item.to || '')
-                      ? 'text-accent'
-                      : 'hover:text-accent'
+                      ? 'text-yellow-400'
+                      : 'text-main-text hover:text-yellow-400'
                   }`}
                 >
                   {item.label}
@@ -88,7 +88,7 @@ export default function Header() {
 
           <Link
             to="/donate"
-            className="px-6 py-2 bg-accent text-button-text font-bold rounded-full hover:bg-accent/90 transition-colors z-10"
+            className="px-6 py-2 bg-yellow-400 text-button-text font-bold rounded-full hover:bg-slate-400 active:bg-zinc-800 transition-colors z-10"
           >
             DONATE
           </Link>

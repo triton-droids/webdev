@@ -10,8 +10,6 @@ export default {
         'main-bg': '#000000',
         'main-text': '#F5F5F5',
         'muted-text': '#A3B2C2',
-        'accent': '#FECE00',
-        'card-bg': '#2A2B2D',
         'button-text': '#101010',
         'logo-blue': '#3B82F6',
         'hover-bg': '#B3C1D6',
