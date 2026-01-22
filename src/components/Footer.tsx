@@ -8,8 +8,9 @@ export default function Footer() {
       <div className="inline-flex flex-col justify-start items-start gap-6 justify-self-end">
         <img className="w-52 h-auto" src={logo} alt="Triton Droids" />
         <div className="w-96 justify-start text-neutral-100 text-base font-normal font-sans">
-          Triton Droids is a non profit and is classified as a &apos;Unincorporated association&apos; organization (EIN 33-
-          1874028) by the Internal Revenue Service (IRS).
+          Triton Droids is a non profit and is classified as a
+          &apos;Unincorporated association&apos; organization (EIN 33- 1874028)
+          by the Internal Revenue Service (IRS).
         </div>
       </div>
       <div className="inline-flex justify-start items-start gap-6">

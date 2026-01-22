@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -19,10 +16,10 @@ export default {
         sans: ['"Proxima Nova"', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
-        'button': '6em',
-        'card': '2rem',
+        button: '6em',
+        card: '2rem',
       },
     },
   },
   plugins: [],
-}
+};

@@ -13,8 +13,9 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh', '@typescript-eslint'],
+  plugins: ['react-refresh', '@typescript-eslint', 'prettier'],
   rules: {
+    'prettier/prettier': 'warn',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },

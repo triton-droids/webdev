@@ -21,9 +21,9 @@ export default function Home() {
         <article className="card min-h-[22rem] w-64 flex flex-col items-center justify-start gap-4">
           <h3 className="text-3xl font-medium mt-12">Our Challenge</h3>
           <p className="text-base leading-relaxed max-w-48 m-0">
-            At Triton Droids, we&apos;re taking on one of the biggest challenges of
-            our time: creating affordable, high-efficiency humanoid robots that
-            can level the playing field in global production.
+            At Triton Droids, we&apos;re taking on one of the biggest challenges
+            of our time: creating affordable, high-efficiency humanoid robots
+            that can level the playing field in global production.
           </p>
         </article>
         <article className="card min-h-[22rem] w-64 flex flex-col items-center justify-start gap-4">
@@ -171,9 +171,9 @@ export default function Home() {
           <div className="wu-content flex flex-col justify-center gap-5 h-full">
             <h3 className="m-0 text-3xl font-medium">Smartest Brains</h3>
             <p className="m-0 leading-relaxed text-base max-w-[26rem]">
-              UCSD&apos;s top-tier faculty and highly innovative student body create
-              the perfect environment for building humanoid robots, blending
-              expertise in AI, robotics, and interdisciplinary research
+              UCSD&apos;s top-tier faculty and highly innovative student body
+              create the perfect environment for building humanoid robots,
+              blending expertise in AI, robotics, and interdisciplinary research
             </p>
             <a className="text-main-text cursor-pointer">Read More</a>
           </div>
