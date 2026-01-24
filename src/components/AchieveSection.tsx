@@ -1,10 +1,18 @@
 import { useState } from 'react';
 import slide1Image from '../assets/carousel/slide-1.jpg';
+import slide2Image from '../assets/carousel/slide-2.jpg';
+import slide3Image from '../assets/carousel/slide-3.jpg';
+import slide4Image from '../assets/carousel/slide-4.jpg';
+
+interface SlidePoint {
+  highlight: string;
+  text: string;
+}
 
 interface SlideData {
   image: string;
   title: string;
-  points: { highlight: string; text: string }[];
+  points: SlidePoint[];
 }
 
 const slides: SlideData[] = [
@@ -13,70 +21,62 @@ const slides: SlideData[] = [
     title: "Leveraging UCSD's Unique Assets",
     points: [
       {
-        highlight: 'Expert Faculty Collaboration',
-        text: ': Access to multidisciplinary experts ensures holistic, socially impactful robot development.',
+        highlight: 'Expert Faculty Collaboration:',
+        text: ' Access to multidisciplinary experts ensures holistic, socially impactful robot development.',
       },
       {
-        highlight: 'Student Volunteer Network',
-        text: ': Large student body aids in data collection, user testing, and real-world development.',
+        highlight: 'Student Volunteer Network:',
+        text: ' Large student body aids in data collection, user testing, and real-world development.',
       },
       {
-        highlight: 'Advanced Data Infrastructure',
-        text: ': UCSD data center enables complex simulations and AI development.',
-      },
-    ],
-  },
-  {
-    image: slide1Image,
-    title: 'Building World-Class Robots',
-    points: [
-      {
-        highlight: 'Cutting-Edge Research',
-        text: ': Pioneering new approaches in robotics and AI integration.',
-      },
-      {
-        highlight: 'Industry Partnerships',
-        text: ': Collaborating with leading tech companies for real-world applications.',
-      },
-      {
-        highlight: 'Open Source Philosophy',
-        text: ': Sharing our designs to accelerate global robotics development.',
+        highlight: 'Advanced Data Infrastructure:',
+        text: ' UCSD data center enables complex simulations and AI development.',
       },
     ],
   },
   {
-    image: slide1Image,
-    title: 'Community Impact',
+    image: slide2Image,
+    title: 'Focus on Equity and Global Impact',
     points: [
       {
-        highlight: 'Educational Outreach',
-        text: ': Inspiring the next generation of robotics engineers.',
+        highlight: 'Disrupting Global Production Disparities:',
+        text: ' Low-cost robots address global inequities in production efficiency.',
       },
       {
-        highlight: 'Accessibility Focus',
-        text: ': Designing robots that can help underserved communities.',
-      },
-      {
-        highlight: 'Sustainable Design',
-        text: ': Building with environmental responsibility in mind.',
+        highlight: 'Targeting Underserved Markets:',
+        text: ' Committed to deploying robots in underserved regions for transformative impact.',
       },
     ],
   },
   {
-    image: slide1Image,
-    title: 'Future Vision',
+    image: slide3Image,
+    title: 'Modular and Scalable Robotics Solutions',
     points: [
       {
-        highlight: 'Autonomous Systems',
-        text: ': Developing fully autonomous humanoid capabilities.',
+        highlight: 'Customizable Robotics Platforms:',
+        text: ' Modular robots adaptable across various industries, ensuring scalability.',
       },
       {
-        highlight: 'Global Deployment',
-        text: ': Planning for worldwide distribution and support.',
+        highlight: 'Affordability Without Compromise:',
+        text: ' Cost-effective design allows affordable, high-quality robots for wide access.',
+      },
+    ],
+  },
+  {
+    image: slide4Image,
+    title: 'Ethical AI and Value Based Partnerships',
+    points: [
+      {
+        highlight: 'Ethical AI Development',
+        text: '',
       },
       {
-        highlight: 'Continuous Innovation',
-        text: ': Constantly pushing the boundaries of what robots can do.',
+        highlight: 'Inclusive Design Philosophy:',
+        text: ' Robots designed for diverse, global populations, including developing regions and disabled users.',
+      },
+      {
+        highlight: 'Partnerships',
+        text: ' for tech subsidy and shared resources.',
       },
     ],
   },
@@ -152,8 +152,8 @@ export default function AchieveSection() {
           {/* Slide content */}
           <div className="bg-[#2A2B2D] rounded-[40px] flex gap-6 items-center w-full overflow-hidden">
             {/* Image */}
-            <div className="w-[513px] h-[595px] shrink-0 p-10 pr-4">
-              <div className="w-full h-full rounded-[32px] overflow-hidden">
+            <div className="w-[513px] h-[595px] shrink-0 p-10 pr-4 flex items-center justify-center">
+              <div className="w-[457px] h-[416px] rounded-[32px] overflow-hidden">
                 <img
                   src={slide.image}
                   alt={slide.title}
@@ -164,7 +164,7 @@ export default function AchieveSection() {
 
             {/* Text content */}
             <div className="flex flex-col gap-10 px-8 py-10 flex-1">
-              <h3 className="text-[40px] font-normal text-main-text leading-tight">
+              <h3 className="text-[40px] font-normal text-main-text leading-tight w-[449px]">
                 {slide.title}
               </h3>
               <ul className="flex flex-col gap-6 list-disc ml-9">
