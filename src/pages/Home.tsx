@@ -1,43 +1,12 @@
-import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
+import VisionSection from '../components/VisionSection';
 
 export default function Home() {
   return (
     <>
       <HeroSection />
 
-      <section
-        id="projects"
-        className="vision-mission text-center py-16 px-20 grid grid-cols-3 justify-center gap-8 max-w-5xl mx-auto"
-      >
-        <h2 className="col-span-3 text-5xl font-bold">
-          A Future Worth Building
-        </h2>
-
-        <article className="card min-h-[22rem] w-64 flex flex-col items-center justify-start gap-4">
-          <h3 className="text-3xl font-medium mt-12">Our Challenge</h3>
-          <p className="text-base leading-relaxed max-w-48 m-0">
-            At Triton Droids, we&apos;re taking on one of the biggest challenges
-            of our time: creating affordable, high-efficiency humanoid robots
-            that can level the playing field in global production.
-          </p>
-        </article>
-        <article className="card min-h-[22rem] w-64 flex flex-col items-center justify-start gap-4">
-          <h3 className="text-3xl font-medium mt-12">Our Mission</h3>
-          <p className="text-base leading-relaxed max-w-48 m-0">
-            To design robots that can work in any environment, from dangerous
-            mines to remote farms, and empower communities that have been left
-            behind by technology.
-          </p>
-        </article>
-        <article className="card min-h-[22rem] w-64 flex flex-col items-center justify-start gap-4">
-          <h3 className="text-3xl font-medium mt-12">Our Focus</h3>
-          <p className="text-base leading-relaxed max-w-48 m-0">
-            Bridging the tech gap between the rich and poor countries can make
-            an incremental difference in value creation by over $2 trillion.
-          </p>
-        </article>
-      </section>
+      <VisionSection />
 
       <hr className="border-muted-text/20 my-8" />
 

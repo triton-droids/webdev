@@ -4,13 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'main-bg': '#000000',
+        'main-bg': '#101010',
         'main-text': '#F5F5F5',
         'muted-text': '#A3B2C2',
         'button-text': '#101010',
         'logo-blue': '#3B82F6',
         'hover-bg': '#B3C1D6',
         'hover-text': '#2D2D2D',
+        'accent': '#FECE00',
       },
       fontFamily: {
         sans: ['"Proxima Nova"', 'system-ui', 'sans-serif'],
