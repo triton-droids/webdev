@@ -1,5 +1,6 @@
 import HeroSection from '../components/HeroSection';
 import VisionSection from '../components/VisionSection';
+import AchieveSection from '../components/AchieveSection';
 
 export default function Home() {
   return (
@@ -8,43 +9,7 @@ export default function Home() {
 
       <VisionSection />
 
-      <hr className="border-muted-text/20 my-8" />
-
-      <section className="achieve py-16 px-8">
-        <h2 className="text-center text-5xl font-bold mb-16">
-          How We Aim to Achieve Our Mission
-        </h2>
-        <div className="card max-w-[50rem] mx-auto p-10 grid grid-cols-[1fr_1.2fr] gap-12 items-center">
-          <img className="achieve-img" src="" alt="Robot lab" />
-          <div className="achieve-content">
-            <h3 className="mb-7 text-4xl font-normal leading-tight m-0">
-              Leveraging UCSD&apos;s Unique Assets
-            </h3>
-            <ul className="list-none p-0">
-              <li className="mb-6 text-lg leading-normal">
-                <strong className="text-accent font-medium">
-                  Expert Faculty Collaboration:
-                </strong>{' '}
-                Access to multidisciplinary experts ensures holistic, socially
-                impactful robot development.
-              </li>
-              <li className="mb-6 text-lg leading-normal">
-                <strong className="text-accent font-medium">
-                  Student Volunteer Network:
-                </strong>{' '}
-                Large student body aids in data collection, user testing, and
-                real-world development.
-              </li>
-              <li className="mb-6 text-lg leading-normal">
-                <strong className="text-accent font-medium">
-                  Advanced Data Infrastructure:
-                </strong>{' '}
-                UCSD data center enables complex simulations and AI development.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <AchieveSection />
 
       <hr className="border-muted-text/20 my-8" />
 
