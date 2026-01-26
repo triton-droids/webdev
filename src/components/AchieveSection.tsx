@@ -1,5 +1,11 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+
+// Slide images - local assets
 import slide1Image from '../assets/carousel/slide-1.jpg';
+import slide2Image from '../assets/carousel/slide-2.jpg';
+import slide3Image from '../assets/carousel/slide-3.jpg';
+import slide4Image from '../assets/carousel/slide-4.jpg';
 
 interface SlideData {
   image: string;
@@ -27,56 +33,48 @@ const slides: SlideData[] = [
     ],
   },
   {
-    image: slide1Image,
-    title: 'Building World-Class Robots',
+    image: slide2Image,
+    title: 'Focus on Equity and Global Impact',
     points: [
       {
-        highlight: 'Cutting-Edge Research',
-        text: ': Pioneering new approaches in robotics and AI integration.',
+        highlight: 'Disrupting Global Production Disparities',
+        text: ': Low-cost robots address global inequities in production efficiency.',
       },
       {
-        highlight: 'Industry Partnerships',
-        text: ': Collaborating with leading tech companies for real-world applications.',
-      },
-      {
-        highlight: 'Open Source Philosophy',
-        text: ': Sharing our designs to accelerate global robotics development.',
+        highlight: 'Targeting Underserved Markets',
+        text: ': Committed to deploying robots in underserved regions for transformative impact.',
       },
     ],
   },
   {
-    image: slide1Image,
-    title: 'Community Impact',
+    image: slide3Image,
+    title: 'Modular and Scalable Robotics Solutions',
     points: [
       {
-        highlight: 'Educational Outreach',
-        text: ': Inspiring the next generation of robotics engineers.',
+        highlight: 'Customizable Robotics Platforms',
+        text: ': Modular robots adaptable across various industries, ensuring scalability.',
       },
       {
-        highlight: 'Accessibility Focus',
-        text: ': Designing robots that can help underserved communities.',
-      },
-      {
-        highlight: 'Sustainable Design',
-        text: ': Building with environmental responsibility in mind.',
+        highlight: 'Affordability Without Compromise',
+        text: ': Cost-effective design allows affordable, high-quality robots for wide access.',
       },
     ],
   },
   {
-    image: slide1Image,
-    title: 'Future Vision',
+    image: slide4Image,
+    title: 'Ethical AI and Value Based Partnerships',
     points: [
       {
-        highlight: 'Autonomous Systems',
-        text: ': Developing fully autonomous humanoid capabilities.',
+        highlight: 'Ethical AI Development',
+        text: '',
       },
       {
-        highlight: 'Global Deployment',
-        text: ': Planning for worldwide distribution and support.',
+        highlight: 'Inclusive Design Philosophy',
+        text: ': Robots designed for diverse, global populations, including developing regions and disabled users.',
       },
       {
-        highlight: 'Continuous Innovation',
-        text: ': Constantly pushing the boundaries of what robots can do.',
+        highlight: 'Partnerships',
+        text: ' for tech subsidy and shared resources.',
       },
     ],
   },
@@ -85,16 +83,19 @@ const slides: SlideData[] = [
 function ArrowButton({
   direction,
   onClick,
+  enabled,
 }: {
   direction: 'left' | 'right';
   onClick: () => void;
+  enabled: boolean;
 }) {
   return (
     <button
       onClick={onClick}
-      className={`size-[66px] rounded-full border-4 border-muted-text flex items-center justify-center hover:border-main-text transition-colors ${
+      disabled={!enabled}
+      className={`size-[66px] rounded-full border-4 border-muted-text flex items-center justify-center transition-all cursor-pointer shrink-0 ${
         direction === 'left' ? '' : 'rotate-180'
-      }`}
+      } ${enabled ? 'hover:border-main-text hover:bg-main-text/10' : 'opacity-50'}`}
       aria-label={direction === 'left' ? 'Previous slide' : 'Next slide'}
     >
       <svg
@@ -118,21 +119,47 @@ function ArrowButton({
 }
 
 export default function AchieveSection() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'center',
+    skipSnaps: false,
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index);
+    },
+    [emblaApi]
+  );
 
-  const slide = slides[currentSlide];
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   return (
     <section className="bg-main-bg py-20 flex flex-col gap-20 items-center justify-center">
@@ -145,39 +172,58 @@ export default function AchieveSection() {
         <div className="bg-[#2A2B2D] h-[456px] w-[70px] rounded-r-[40px] shrink-0" />
 
         {/* Left arrow */}
-        <ArrowButton direction="left" onClick={prevSlide} />
+        <ArrowButton
+          direction="left"
+          onClick={scrollPrev}
+          enabled={canScrollPrev}
+        />
 
         {/* Main carousel content */}
         <div className="flex flex-col gap-[72px] items-center w-[1050px]">
-          {/* Slide content */}
-          <div className="bg-[#2A2B2D] rounded-[40px] flex gap-6 items-center w-full overflow-hidden">
-            {/* Image */}
-            <div className="w-[513px] h-[595px] shrink-0 p-10 pr-4">
-              <div className="w-full h-full rounded-[32px] overflow-hidden">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          {/* Embla carousel viewport */}
+          <div className="overflow-hidden w-full" ref={emblaRef}>
+            <div className="flex">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className="flex-[0_0_100%] min-w-0 transition-opacity duration-300"
+                  style={{
+                    opacity: selectedIndex === index ? 1 : 0.3,
+                  }}
+                >
+                  {/* Slide content */}
+                  <div className="bg-[#2A2B2D] rounded-[40px] flex gap-6 items-center w-full overflow-hidden">
+                    {/* Image */}
+                    <div className="w-[513px] h-[595px] shrink-0 p-10 pr-4">
+                      <div className="w-full h-full rounded-[32px] overflow-hidden">
+                        <img
+                          src={slide.image}
+                          alt={slide.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
 
-            {/* Text content */}
-            <div className="flex flex-col gap-10 px-8 py-10 flex-1">
-              <h3 className="text-[40px] font-normal text-main-text leading-tight">
-                {slide.title}
-              </h3>
-              <ul className="flex flex-col gap-6 list-disc ml-9">
-                {slide.points.map((point, index) => (
-                  <li
-                    key={index}
-                    className="text-2xl text-main-text leading-[1.4]"
-                  >
-                    <span className="text-accent">{point.highlight}</span>
-                    {point.text}
-                  </li>
-                ))}
-              </ul>
+                    {/* Text content */}
+                    <div className="flex flex-col gap-10 px-8 py-10 flex-1">
+                      <h3 className="text-[40px] font-normal text-main-text leading-tight">
+                        {slide.title}
+                      </h3>
+                      <ul className="flex flex-col gap-6 list-disc ml-9">
+                        {slide.points.map((point, pointIndex) => (
+                          <li
+                            key={pointIndex}
+                            className="text-2xl text-main-text leading-[1.4]"
+                          >
+                            <span className="text-accent">{point.highlight}</span>
+                            {point.text}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -186,9 +232,9 @@ export default function AchieveSection() {
             {slides.map((_, index) => (
               <button
                 key={index}
-                onClick={() => goToSlide(index)}
-                className={`rounded-full transition-all ${
-                  index === currentSlide
+                onClick={() => scrollTo(index)}
+                className={`rounded-full transition-all cursor-pointer ${
+                  index === selectedIndex
                     ? 'bg-main-text w-[55px] h-[18px]'
                     : 'border-2 border-muted-text size-[18px] hover:border-main-text'
                 }`}
@@ -199,7 +245,11 @@ export default function AchieveSection() {
         </div>
 
         {/* Right arrow */}
-        <ArrowButton direction="right" onClick={nextSlide} />
+        <ArrowButton
+          direction="right"
+          onClick={scrollNext}
+          enabled={canScrollNext}
+        />
 
         {/* Right side panel */}
         <div className="bg-[#2A2B2D] h-[456px] w-[70px] rounded-l-[40px] shrink-0" />
