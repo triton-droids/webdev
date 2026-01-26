@@ -169,7 +169,10 @@ export default function AchieveSection() {
               </h3>
               <ul className="flex flex-col gap-6 list-disc ml-9">
                 {slide.points.map((point, index) => (
-                  <li key={index} className="text-2xl text-main-text leading-[1.4]">
+                  <li
+                    key={index}
+                    className="text-2xl text-main-text leading-[1.4]"
+                  >
                     <span className="text-accent">{point.highlight}</span>
                     {point.text}
                   </li>
