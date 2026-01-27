@@ -1,7 +1,11 @@
 import challengeIcon from '../../../assets/icons/challenge-icon.svg';
 import missionIcon from '../../../assets/icons/mission-icon.svg';
 import focusIcon from '../../../assets/icons/focus-icon.svg';
-import { SectionHeading, CardTitle, BodyText } from '../../../components/Typography';
+import {
+  SectionHeading,
+  CardTitle,
+  BodyText,
+} from '../../../components/Typography';
 
 interface VisionCardProps {
   icon: string;

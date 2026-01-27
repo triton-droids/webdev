@@ -1,5 +1,9 @@
 import Carousel from '../../../components/Carousel';
-import { SectionHeading, CardTitle, BodyText } from '../../../components/Typography';
+import {
+  SectionHeading,
+  CardTitle,
+  BodyText,
+} from '../../../components/Typography';
 
 const slide1Image =
   'https://www.figma.com/api/mcp/asset/e5765e1e-d063-4905-a164-dbf2388ca35a';

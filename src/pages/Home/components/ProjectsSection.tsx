@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import humanoidIconBlue from '../../../assets/projects/humanoid-icon-blue.svg';
-import { SectionHeading, CardTitle, BodyText } from '../../../components/Typography';
+import {
+  SectionHeading,
+  CardTitle,
+  BodyText,
+} from '../../../components/Typography';
 import humanoidIconGray from '../../../assets/projects/humanoid-icon-gray.svg';
 import pupperIconBlue from '../../../assets/projects/pupper-icon-blue.svg';
 import pupperIconGray from '../../../assets/projects/pupper-icon-gray.svg';
