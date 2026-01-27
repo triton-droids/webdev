@@ -2,6 +2,8 @@
 
 This document provides an overview of the reusable components in the Triton Droids website.
 
+For information about individual pages, see the [Pages Documentation](./pages/README.md).
+
 ## Core Components
 
 ### Typography Components
@@ -115,36 +117,21 @@ Dropdown menu component for navigation items.
 
 ## Page-Specific Components
 
+For detailed information about each page and its components, see the [Pages Documentation](./pages/README.md).
+
 ### Home Page Components
 
-#### `HeroSection`
-Main hero section with background image and call-to-action buttons.
+**Location:** `src/pages/Home/components/`
 
-**Location:** `src/components/HeroSection.tsx`
-
-#### `VisionSection`
-Three-column vision cards section.
-
-**Location:** `src/components/VisionSection.tsx`
-
-#### `AchieveSection`
-Carousel section explaining how the mission is achieved.
-
-**Location:** `src/components/AchieveSection.tsx`
-
-#### `ProjectsSection`
-Interactive projects showcase with icons and descriptions.
-
-**Location:** `src/components/ProjectsSection.tsx`
-
-#### `RecruitmentSection`
-Recruitment status banner.
-
-**Location:** `src/components/RecruitmentSection.tsx`
+- **`HeroSection`** - Main hero section with background image and call-to-action buttons
+- **`VisionSection`** - Three-column vision cards section
+- **`AchieveSection`** - Carousel section explaining how the mission is achieved
+- **`ProjectsSection`** - Interactive projects showcase with icons and descriptions
+- **`RecruitmentSection`** - Recruitment status banner
 
 ### Join Page Components
 
-Located in `src/components/join/`:
+**Location:** `src/pages/Join/components/`
 
 - **`JoinHeroSection`** - Join page hero
 - **`JoinCTASection`** - Call-to-action section
@@ -154,6 +141,7 @@ Located in `src/components/join/`:
 - **`HumanoidTeamsSection`** - Humanoid project teams
 - **`InternalOpsSection`** - Internal operations teams
 - **`PupperTeamsSection`** - Pupper project teams
+- **`TeamCard`** - Reusable team information card
 
 ## Component Patterns
 

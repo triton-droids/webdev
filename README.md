@@ -65,6 +65,15 @@ src/
 docs/
   ├── typography.md   # Typography system documentation
   ├── components.md   # Component documentation
+  ├── pages/          # Page documentation
+  │   ├── README.md   # Pages overview
+  │   ├── home.md     # Home page documentation
+  │   ├── join.md     # Join page documentation
+  │   ├── projects.md # Projects page documentation
+  │   ├── team.md     # Team page documentation
+  │   ├── sponsorship.md # Sponsorship page documentation
+  │   ├── advisor.md  # Advisor page documentation
+  │   └── alumni.md   # Alumni page documentation
   ├── development.md  # Development guide
   └── deployment.md   # Deployment guide
 ```
@@ -75,6 +84,7 @@ Comprehensive documentation is available in the [`docs/`](./docs/) folder:
 
 - **[Typography System](./docs/typography.md)** - Complete guide to the typography system, including all components, usage examples, and customization options
 - **[Components](./docs/components.md)** - Overview of reusable components and their usage
+- **[Pages](./docs/pages/README.md)** - Detailed documentation for each page in the website
 - **[Development Guide](./docs/development.md)** - Development setup, conventions, and best practices
 - **[Deployment Guide](./docs/deployment.md)** - How to deploy the website to production
 
