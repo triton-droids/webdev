@@ -1,16 +1,16 @@
-import ProjectHeroSection from '../components/projects/ProjectHeroSection';
-import ProjectDetailCard from '../components/projects/ProjectDetailCard';
-import ModelViewer from '../components/projects/ModelViewer';
-import ProjectGallery from '../components/projects/ProjectGallery';
+import ProjectHeroSection from '../../components/projects/ProjectHeroSection';
+import ProjectDetailCard from '../../components/projects/ProjectDetailCard';
+import ModelViewer from '../../components/projects/ModelViewer';
+import ProjectGallery from '../../components/projects/ProjectGallery';
 
 // Project section icons
-import rationaleIcon from '../assets/projects/icons/rationale-icon.svg';
-import functionIcon from '../assets/projects/icons/function-icon.svg';
-import approachIcon from '../assets/projects/icons/approach-icon.svg';
-import progressIcon from '../assets/projects/icons/progress-icon.svg';
+import rationaleIcon from '../../assets/projects/icons/rationale-icon.svg';
+import functionIcon from '../../assets/projects/icons/function-icon.svg';
+import approachIcon from '../../assets/projects/icons/approach-icon.svg';
+import progressIcon from '../../assets/projects/icons/progress-icon.svg';
 
 // ASCII art asset - from Figma node 966-1235
-import asciiArtImage from '../assets/projects/hero/ascii-art.png';
+import asciiArtImage from '../../assets/projects/hero/ascii-art.png';
 
 // Humanoid Robot project data
 const humanoidProject = {
