@@ -1,7 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
+import Carousel from './Carousel';
 
-// Slide images - local assets
 import slide1Image from '../assets/carousel/slide-1.jpg';
 import slide2Image from '../assets/carousel/slide-2.jpg';
 import slide3Image from '../assets/carousel/slide-3.jpg';
@@ -80,179 +78,60 @@ const slides: SlideData[] = [
   },
 ];
 
-function ArrowButton({
-  direction,
-  onClick,
-  enabled,
-}: {
-  direction: 'left' | 'right';
-  onClick: () => void;
-  enabled: boolean;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      disabled={!enabled}
-      className={`size-[66px] rounded-full border-4 border-muted-text flex items-center justify-center transition-all cursor-pointer shrink-0 ${
-        direction === 'left' ? '' : 'rotate-180'
-      } ${enabled ? 'hover:border-main-text hover:bg-main-text/10' : 'opacity-50'}`}
-      aria-label={direction === 'left' ? 'Previous slide' : 'Next slide'}
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="text-muted-text"
-      >
-        <path
-          d="M15 18L9 12L15 6"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </button>
-  );
-}
-
 export default function AchieveSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: 'center',
-    skipSnaps: false,
-  });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (emblaApi) emblaApi.scrollTo(index);
-    },
-    [emblaApi]
-  );
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-    return () => {
-      emblaApi.off('select', onSelect);
-      emblaApi.off('reInit', onSelect);
-    };
-  }, [emblaApi, onSelect]);
-
   return (
-    <section className="bg-main-bg py-20 flex flex-col gap-20 items-center justify-center">
+    <section className="bg-main-bg py-20 flex flex-col gap-20 items-center justify-center overflow-hidden">
       <h2 className="text-[64px] font-bold text-main-text text-center px-[100px]">
         How We Aim to Achieve Our Mission
       </h2>
 
-      <div className="flex gap-12 items-center justify-center w-full">
-        {/* Left side panel */}
-        <div className="bg-[#2A2B2D] h-[456px] w-[70px] rounded-r-[40px] shrink-0" />
+      <div className="flex flex-col gap-[72px] items-center w-full">
+        <Carousel
+          renderSlide={(slide, _index, tweenValue) => {
+            const scale = 0.85 + tweenValue * 0.15;
+            const opacity = 0.3 + tweenValue * 0.7;
 
-        {/* Left arrow */}
-        <ArrowButton
-          direction="left"
-          onClick={scrollPrev}
-          enabled={canScrollPrev}
-        />
-
-        {/* Main carousel content */}
-        <div className="flex flex-col gap-[72px] items-center w-[1050px]">
-          {/* Embla carousel viewport */}
-          <div className="overflow-hidden w-full" ref={emblaRef}>
-            <div className="flex">
-              {slides.map((slide, index) => (
-                <div
-                  key={index}
-                  className="flex-[0_0_100%] min-w-0 transition-opacity duration-300"
-                  style={{
-                    opacity: selectedIndex === index ? 1 : 0.3,
-                  }}
-                >
-                  {/* Slide content */}
-                  <div className="bg-[#2A2B2D] rounded-[40px] flex gap-6 items-center w-full overflow-hidden">
-                    {/* Image */}
-                    <div className="w-[513px] h-[595px] shrink-0 p-10 pr-4">
-                      <div className="w-full h-full rounded-[32px] overflow-hidden">
-                        <img
-                          src={slide.image}
-                          alt={slide.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Text content */}
-                    <div className="flex flex-col gap-10 px-8 py-10 flex-1">
-                      <h3 className="text-[40px] font-normal text-main-text leading-tight">
-                        {slide.title}
-                      </h3>
-                      <ul className="flex flex-col gap-6 list-disc ml-9">
-                        {slide.points.map((point, pointIndex) => (
-                          <li
-                            key={pointIndex}
-                            className="text-2xl text-main-text leading-[1.4]"
-                          >
-                            <span className="text-accent">{point.highlight}</span>
-                            {point.text}
-                          </li>
-                        ))}
-                      </ul>
+            return (
+              <div
+                className="transition-transform duration-100 ease-out origin-center"
+                style={{
+                  transform: `scale(${scale})`,
+                  opacity: opacity,
+                }}
+              >
+                <div className="bg-[#2A2B2D] rounded-[40px] flex gap-6 items-center w-full overflow-hidden">
+                  <div className="w-[513px] h-[595px] shrink-0 p-10 pr-4">
+                    <div className="w-full h-full rounded-[32px] overflow-hidden">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
+
+                  <div className="flex flex-col gap-10 px-8 py-10 flex-1">
+                    <h3 className="text-[40px] font-normal text-main-text leading-tight">
+                      {slide.title}
+                    </h3>
+                    <ul className="flex flex-col gap-6 list-disc ml-9">
+                      {slide.points.map((point, pointIndex) => (
+                        <li
+                          key={pointIndex}
+                          className="text-2xl text-main-text leading-[1.4]"
+                        >
+                          <span className="text-accent">{point.highlight}</span>
+                          {point.text}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Pagination dots */}
-          <div className="flex gap-[18px] items-center">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => scrollTo(index)}
-                className={`rounded-full transition-all cursor-pointer ${
-                  index === selectedIndex
-                    ? 'bg-main-text w-[55px] h-[18px]'
-                    : 'border-2 border-muted-text size-[18px] hover:border-main-text'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Right arrow */}
-        <ArrowButton
-          direction="right"
-          onClick={scrollNext}
-          enabled={canScrollNext}
+              </div>
+            );
+          }}
+          slides={slides}
         />
-
-        {/* Right side panel */}
-        <div className="bg-[#2A2B2D] h-[456px] w-[70px] rounded-l-[40px] shrink-0" />
       </div>
     </section>
   );

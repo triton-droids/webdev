@@ -20,15 +20,25 @@ function TeamCard({ icon, name }: TeamCardProps) {
 const teams = [
   { id: 'mechanical', name: 'Mechanical', icon: mechanicalIcon },
   { id: 'electrical', name: 'Electrical', icon: electricalIcon },
-  { id: 'software-embedded', name: 'Software: Embedded Systems', icon: embeddedSystemsIcon },
-  { id: 'software-ml', name: 'Software: Machine Learning', icon: machineLearningIcon },
+  {
+    id: 'software-embedded',
+    name: 'Software: Embedded Systems',
+    icon: embeddedSystemsIcon,
+  },
+  {
+    id: 'software-ml',
+    name: 'Software: Machine Learning',
+    icon: machineLearningIcon,
+  },
 ];
 
 export default function HumanoidTeamsSection() {
   return (
     <section className="flex flex-col gap-20 items-center justify-center py-20 px-6 lg:px-[148px] w-full">
       <div className="flex flex-col w-full max-w-[1216px]">
-        <h2 className="text-[36px] font-bold text-main-text">Humanoid Droid Project</h2>
+        <h2 className="text-[36px] font-bold text-main-text">
+          Humanoid Droid Project
+        </h2>
         <p className="text-[32px] text-main-text">Main Engineering Teams</p>
       </div>
       <div className="flex flex-wrap gap-10 items-center justify-center w-full max-w-[1216px]">

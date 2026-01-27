@@ -23,18 +23,24 @@ export default function RecruitmentProcess() {
       </h2>
 
       {/* Steps container */}
-      <div 
+      <div
         className="relative w-full h-[100px]"
         onMouseLeave={() => setHoveredStep(null)}
       >
         {/* Default state - all steps in a row */}
-        <div 
+        <div
           className={`flex items-center w-full transition-opacity duration-400 ${
-            hoveredStep !== null ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            hoveredStep !== null
+              ? 'opacity-0 pointer-events-none'
+              : 'opacity-100'
           }`}
         >
           {steps.map((step, index) => (
-            <div key={step.number} className="flex items-center" style={{ flex: index === steps.length - 1 ? 'none' : 1 }}>
+            <div
+              key={step.number}
+              className="flex items-center"
+              style={{ flex: index === steps.length - 1 ? 'none' : 1 }}
+            >
               <div
                 className="flex flex-col gap-2 items-center text-center cursor-pointer hover:scale-105 transition-transform min-w-[100px]"
                 onMouseEnter={() => setHoveredStep(step.number)}
@@ -72,9 +78,9 @@ export default function RecruitmentProcess() {
                 {step.label}
               </span>
             </div>
-            
+
             {/* Solid line extending right */}
-            <div 
+            <div
               className={`flex-1 h-[2px] bg-main-text ml-6 transition-all duration-500 origin-left ${
                 hoveredStep === step.number ? 'scale-x-100' : 'scale-x-0'
               }`}

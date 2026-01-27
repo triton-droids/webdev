@@ -7,7 +7,7 @@ export default function JoinCTASection() {
           Ready to build an amazing future?
         </h2>
       </div>
-      
+
       {/* Button - Figma: 706px wide, 101px tall, 64px text, rounded-99px */}
       <a
         href="#"
@@ -15,7 +15,7 @@ export default function JoinCTASection() {
       >
         Join Triton Droids
       </a>
-      
+
       {/* Description - Figma: 40px regular, white, full width */}
       <p className="text-lg md:text-xl lg:text-2xl xl:text-[28px] text-white leading-normal w-full">
         Thanks for your interest! Applications are currently closed. Check back

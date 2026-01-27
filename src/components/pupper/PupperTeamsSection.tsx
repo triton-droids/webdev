@@ -20,8 +20,16 @@ function TeamCard({ icon, name }: TeamCardProps) {
 const teams = [
   { id: 'mechanical', name: 'Mechanical', icon: mechanicalIcon },
   { id: 'electrical', name: 'Electrical', icon: electricalIcon },
-  { id: 'software-embedded', name: 'Software: Embedded Systems', icon: embeddedSystemsIcon },
-  { id: 'software-ml', name: 'Software: Machine Learning', icon: machineLearningIcon },
+  {
+    id: 'software-embedded',
+    name: 'Software: Embedded Systems',
+    icon: embeddedSystemsIcon,
+  },
+  {
+    id: 'software-ml',
+    name: 'Software: Machine Learning',
+    icon: machineLearningIcon,
+  },
 ];
 
 export default function PupperTeamsSection() {
