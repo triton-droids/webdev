@@ -18,7 +18,6 @@ export default function NavDropdown({
   dropdown,
   isOpen,
   onMouseEnter,
-  onItemClick,
 }: NavDropdownProps) {
   const location = useLocation();
 

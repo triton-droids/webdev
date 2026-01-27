@@ -27,4 +27,13 @@
   .group:hover svg {
     margin-left: 0;
   }
+
+  /* Hide scrollbar but keep content scrollable */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

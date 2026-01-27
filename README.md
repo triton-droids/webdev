@@ -57,8 +57,53 @@ The container will automatically install dependencies on first launch.
 ```
 src/
   ├── components/     # Reusable components
+  │   └── Typography.tsx  # Typography components
   ├── pages/          # Page components
-  ├── App.jsx         # Main app component with routing
-  ├── main.jsx        # Entry point
+  ├── App.tsx         # Main app component with routing
+  ├── main.tsx        # Entry point
   └── index.css       # Global styles with Tailwind
+docs/
+  ├── typography.md   # Typography system documentation
+  ├── components.md   # Component documentation
+  ├── pages/          # Page documentation
+  │   ├── README.md   # Pages overview
+  │   ├── home.md     # Home page documentation
+  │   ├── join.md     # Join page documentation
+  │   ├── projects.md # Projects page documentation
+  │   ├── team.md     # Team page documentation
+  │   ├── sponsorship.md # Sponsorship page documentation
+  │   ├── advisor.md  # Advisor page documentation
+  │   └── alumni.md   # Alumni page documentation
+  ├── development.md  # Development guide
+  └── deployment.md   # Deployment guide
+```
+
+## Documentation
+
+Comprehensive documentation is available in the [`docs/`](./docs/) folder:
+
+- **[Typography System](./docs/typography.md)** - Complete guide to the typography system, including all components, usage examples, and customization options
+- **[Components](./docs/components.md)** - Overview of reusable components and their usage
+- **[Pages](./docs/pages/README.md)** - Detailed documentation for each page in the website
+- **[Development Guide](./docs/development.md)** - Development setup, conventions, and best practices
+- **[Deployment Guide](./docs/deployment.md)** - How to deploy the website to production
+
+### Quick Typography Reference
+
+This project uses a consistent typography system through reusable components. For detailed documentation, see [Typography Documentation](./docs/typography.md).
+
+**Available Components:**
+- `HeroHeading` - For main page hero sections (h1)
+- `SectionHeading` - For major section titles (h2)
+- `CardTitle` - For card and subsection headings (h3)
+- `BodyText` - For paragraphs with size variants (`sm`, `base`, `lg`)
+
+**Quick Example:**
+```tsx
+import { HeroHeading, SectionHeading, BodyText } from '../components/Typography';
+
+<HeroHeading>Page Title</HeroHeading>
+<BodyText size="lg">Hero subtitle</BodyText>
+<SectionHeading>Section Title</SectionHeading>
+<BodyText>Regular paragraph text.</BodyText>
 ```
