@@ -34,7 +34,7 @@ const humanoidProject = {
       icon: approachIcon,
       title: 'Approach',
       description:
-        'We are taking a staged, research-driven approach to development. Our initial focus is on the robot\'s lower body, mastering bipedal locomotion through iterative design and testing. We are building a solid foundation in mechanical design, control systems, and sensor integration before moving to upper body development. This methodical approach ensures each component is thoroughly tested and optimized.',
+        "We are taking a staged, research-driven approach to development. Our initial focus is on the robot's lower body, mastering bipedal locomotion through iterative design and testing. We are building a solid foundation in mechanical design, control systems, and sensor integration before moving to upper body development. This methodical approach ensures each component is thoroughly tested and optimized.",
     },
     {
       icon: progressIcon,

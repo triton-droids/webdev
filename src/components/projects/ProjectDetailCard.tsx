@@ -15,7 +15,11 @@ export default function ProjectDetailCard({
       <div className="flex flex-col gap-4 lg:gap-[24px] items-center justify-center w-full lg:w-[200px] shrink-0">
         {/* Icon - Figma: 88px */}
         <div className="w-[60px] h-[60px] md:w-[74px] md:h-[74px] lg:w-[88px] lg:h-[88px] flex items-center justify-center shrink-0">
-          <img src={icon} alt={title} className="w-full h-full object-contain" />
+          <img
+            src={icon}
+            alt={title}
+            className="w-full h-full object-contain"
+          />
         </div>
 
         {/* Title - Figma: 64px regular weight, gray #A3B2C2 */}
