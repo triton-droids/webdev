@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SectionHeading } from '../Typography';
 
 interface Step {
   number: number;
@@ -18,9 +19,7 @@ export default function RecruitmentProcess() {
   return (
     <section className="flex flex-col gap-4 md:gap-6 items-start py-12 lg:py-20 w-full max-w-[1158px] mx-auto px-6">
       {/* Title */}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[52px] font-bold text-main-text">
-        Recruitment Process
-      </h2>
+      <SectionHeading>Recruitment Process</SectionHeading>
 
       {/* Steps container */}
       <div

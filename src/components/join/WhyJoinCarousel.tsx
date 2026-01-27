@@ -1,4 +1,5 @@
 import Carousel from '../Carousel';
+import { SectionHeading, CardTitle, BodyText } from '../Typography';
 
 const slide1Image =
   'https://www.figma.com/api/mcp/asset/e5765e1e-d063-4905-a164-dbf2388ca35a';
@@ -51,9 +52,7 @@ export default function WhyJoinCarousel() {
   return (
     <section className="flex flex-col gap-10 lg:gap-20 items-center w-full">
       <div className="w-full max-w-[1228px] mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-main-text">
-          Why join Triton Droids?
-        </h2>
+        <SectionHeading>Why join Triton Droids?</SectionHeading>
       </div>
 
       <Carousel
@@ -83,12 +82,10 @@ export default function WhyJoinCarousel() {
                 </div>
 
                 <div className="flex flex-col gap-4 md:gap-5 lg:gap-6 px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-main-text leading-tight">
+                  <CardTitle className="font-bold leading-tight">
                     {slide.title}
-                  </h3>
-                  <p className="text-sm md:text-base lg:text-lg xl:text-xl text-main-text leading-relaxed">
-                    {slide.description}
-                  </p>
+                  </CardTitle>
+                  <BodyText>{slide.description}</BodyText>
                 </div>
               </div>
             </div>

@@ -1,13 +1,15 @@
+import { SectionHeading, BodyText } from './Typography';
+
 export default function RecruitmentSection() {
   return (
-    <section className="flex flex-col gap-10 items-center text-center py-20 w-full">
-      <h2 className="text-4xl md:text-5xl lg:text-[64px] font-bold text-main-text leading-none">
+    <section className="flex flex-col gap-6 md:gap-8 lg:gap-10 items-center text-center py-12 md:py-16 lg:py-20 w-full px-6">
+      <SectionHeading className="leading-tight">
         2025-2026 Member Recruitment is{' '}
         <span className="text-accent">Closed</span>
-      </h2>
-      <p className="text-xl md:text-2xl text-muted-text">
+      </SectionHeading>
+      <BodyText size="lg" className="text-muted-text">
         Stay tuned for our next application season!
-      </p>
+      </BodyText>
     </section>
   );
 }

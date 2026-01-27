@@ -1,13 +1,14 @@
 import HumanoidTeamsSection from './HumanoidTeamsSection';
 import InternalOpsSection from './InternalOpsSection';
 import PupperTeamsSection from '../pupper/PupperTeamsSection';
+import { SectionHeading } from '../Typography';
 
 export default function OurTeamsSection() {
   return (
     <section className="flex flex-col w-full">
       {/* Our Teams Header */}
-      <div className="px-6 lg:px-[148px] py-20 w-full">
-        <h2 className="text-[64px] font-bold text-main-text">Our Teams</h2>
+      <div className="px-6 lg:px-[148px] py-12 md:py-16 lg:py-20 w-full">
+        <SectionHeading>Our Teams</SectionHeading>
       </div>
 
       {/* Humanoid Droid Project */}

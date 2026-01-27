@@ -1,6 +1,7 @@
 import challengeIcon from '../assets/icons/challenge-icon.svg';
 import missionIcon from '../assets/icons/mission-icon.svg';
 import focusIcon from '../assets/icons/focus-icon.svg';
+import { SectionHeading, CardTitle, BodyText } from './Typography';
 
 interface VisionCardProps {
   icon: string;
@@ -10,27 +11,27 @@ interface VisionCardProps {
 
 function VisionCard({ icon, title, children }: VisionCardProps) {
   return (
-    <div className="border-[6px] border-[#2A2B2D] rounded-[40px] flex flex-col items-center px-6 pt-10 pb-16 flex-1 basis-0 min-w-0">
-      <div className="size-[88px] flex items-center justify-center shrink-0 mb-10">
+    <div className="border-[6px] border-[#2A2B2D] rounded-[24px] md:rounded-[32px] lg:rounded-[40px] flex flex-col items-center px-4 md:px-6 pt-6 md:pt-8 lg:pt-10 pb-8 md:pb-12 lg:pb-16 flex-1 basis-0 min-w-0">
+      <div className="size-16 md:size-20 lg:size-[88px] flex items-center justify-center shrink-0 mb-6 md:mb-8 lg:mb-10">
         <img alt="" className="max-w-full max-h-full" src={icon} />
       </div>
-      <h3 className="text-[40px] font-normal text-main-text text-center mb-6">
+      <CardTitle className="text-center mb-4 md:mb-5 lg:mb-6 font-normal">
         {title}
-      </h3>
-      <p className="text-2xl text-main-text text-center max-w-[280px] leading-[1.4] mx-auto">
+      </CardTitle>
+      <BodyText size="lg" className="text-center max-w-[280px] mx-auto">
         {children}
-      </p>
+      </BodyText>
     </div>
   );
 }
 
 export default function VisionSection() {
   return (
-    <section className="flex flex-col gap-20 items-center justify-center pb-20 pt-10 px-[100px] bg-main-bg">
-      <h2 className="text-[64px] font-bold text-main-text w-full text-center">
+    <section className="flex flex-col gap-10 md:gap-16 lg:gap-20 items-center justify-center pb-12 md:pb-16 lg:pb-20 pt-6 md:pt-8 lg:pt-10 px-6 md:px-12 lg:px-20 xl:px-[100px] bg-main-bg">
+      <SectionHeading className="w-full text-center">
         A Future Worth Building
-      </h2>
-      <div className="flex gap-9 items-stretch w-full max-w-[1400px]">
+      </SectionHeading>
+      <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-9 items-stretch w-full max-w-[1400px]">
         <VisionCard icon={challengeIcon} title="Our Challenge">
           At Triton Droids, we&apos;re taking on one of the biggest challenges
           of our time:{' '}
