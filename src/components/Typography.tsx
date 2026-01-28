@@ -6,7 +6,7 @@ interface TypographyProps {
 export function SectionHeading({ children, className = '' }: TypographyProps) {
   return (
     <h2
-      className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-main-text ${className}`}
+      className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-main-text ${className}`}
     >
       {children}
     </h2>
@@ -16,7 +16,7 @@ export function SectionHeading({ children, className = '' }: TypographyProps) {
 export function CardTitle({ children, className = '' }: TypographyProps) {
   return (
     <h3
-      className={`text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-main-text ${className}`}
+      className={`text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-main-text ${className}`}
     >
       {children}
     </h3>
@@ -48,7 +48,7 @@ export function BodyText({
 
   return (
     <p
-      className={`${sizeClasses[size]} text-main-text leading-relaxed ${className}`}
+      className={`${sizeClasses[size]} text-main-text leading-relaxed font-light ${className}`}
     >
       {children}
     </p>
