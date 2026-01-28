@@ -1,3 +1,5 @@
+import { SectionHeading, BodyText } from '../../../components/Typography';
+
 interface ModelViewerProps {
   modelUrl?: string;
   fallbackImage?: string;
@@ -15,10 +17,12 @@ export default function ModelViewer({
         <div className="w-full h-[500px] md:h-[600px] rounded-[16px] overflow-hidden bg-[#1A1A1A] flex items-center justify-center">
           {/* Placeholder for 3D model - can be replaced with Three.js, model-viewer, or Sketchfab embed */}
           <div className="text-center text-main-text">
-            <p className="text-xl mb-4">3D Interactive Model</p>
-            <p className="text-muted-text text-sm">
+            <SectionHeading className="text-xl mb-4">
+              3D Interactive Model
+            </SectionHeading>
+            <BodyText size="sm" className="text-muted-text text-sm">
               {modelUrl ? 'Model loading...' : 'Model URL not provided'}
-            </p>
+            </BodyText>
           </div>
         </div>
       ) : fallbackImage ? (
@@ -31,7 +35,7 @@ export default function ModelViewer({
         </div>
       ) : (
         <div className="w-full h-[500px] rounded-[16px] bg-[#1A1A1A] flex items-center justify-center">
-          <p className="text-main-text">3D Model Placeholder</p>
+          <BodyText className="text-main-text">3D Model Placeholder</BodyText>
         </div>
       )}
     </div>
