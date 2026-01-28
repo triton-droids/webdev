@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 import ucsdLogo from '../assets/UCSanDiegoLogo-White 1.png';
 
 export default function Footer() {
   return (
-    <footer className="w-full mt-auto bg-stone-950 grid grid-cols-[1fr_auto_1fr] items-start gap-36 p-20">
+    <footer className="w-full mt-auto bg-main-bg grid grid-cols-[1fr_auto_1fr] items-start gap-36 p-20">
       <div className="inline-flex flex-col justify-start items-start gap-6 justify-self-end">
         <img className="w-52 h-auto" src={logo} alt="Triton Droids" />
         <div className="w-96 justify-start text-neutral-100 text-base font-normal font-sans">

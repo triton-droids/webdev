@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 import NavDropdown, { DropdownMenu } from './NavDropdown';
 
 interface DropdownItem {
@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-stone-950 shadow-lg transition-all duration-300 ease-in-out ${
+      className={`sticky top-0 z-50 w-full bg-main-bg shadow-lg transition-all duration-300 ease-in-out ${
         openDropdown ? 'pb-8' : ''
       }`}
       onMouseLeave={() => setOpenDropdown(null)}
