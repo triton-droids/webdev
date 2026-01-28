@@ -1,3 +1,5 @@
+import { CardTitle, BodyText } from '../../../components/Typography';
+
 interface ProjectDetailCardProps {
   icon: string;
   title: string;
@@ -22,16 +24,16 @@ export default function ProjectDetailCard({
           />
         </div>
 
-        {/* Title - Figma: 64px regular weight, gray #A3B2C2 */}
-        <h3 className="text-2xl md:text-4xl lg:text-5xl xl:text-[64px] font-normal text-[#A3B2C2] leading-none text-center">
+        {/* Title - aligned with other CardTitle usage */}
+        <CardTitle className="font-normal text-slate-400 leading-none text-center">
           {title}
-        </h3>
+        </CardTitle>
       </div>
 
-      {/* Description - Figma: 24px white, fixed width 676px */}
-      <p className="text-base md:text-lg lg:text-xl xl:text-[24px] text-main-text leading-normal lg:w-[676px] text-center lg:text-left">
+      {/* Description - aligned with other card body text */}
+      <BodyText className="lg:w-[676px] text-center lg:text-left">
         {description}
-      </p>
+      </BodyText>
     </div>
   );
 }
