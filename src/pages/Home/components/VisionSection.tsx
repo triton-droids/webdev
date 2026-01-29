@@ -32,7 +32,7 @@ function VisionCard({ icon, title, children }: VisionCardProps) {
 export default function VisionSection() {
   return (
     <section className="flex flex-col gap-10 md:gap-16 lg:gap-20 items-center justify-center pb-12 md:pb-16 lg:pb-20 pt-6 md:pt-8 lg:pt-10 px-6 md:px-12 lg:px-20 xl:px-[100px] bg-main-bg">
-      <SectionHeading className="w-full text-center">
+      <SectionHeading className="w-full text-left">
         A Future Worth Building
       </SectionHeading>
       <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-9 items-stretch w-full max-w-[1400px]">

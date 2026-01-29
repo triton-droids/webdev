@@ -31,13 +31,20 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-[24px] items-start">
           <a
             href="#projects"
-            className="bg-accent text-button-text text-lg md:text-xl lg:text-2xl px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-[99px] flex items-center justify-center"
+            onClick={(event) => {
+              event.preventDefault();
+              const section = document.getElementById('projects');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="bg-accent text-button-text text-lg md:text-xl lg:text-2xl px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-[99px] flex items-center justify-center hover:bg-slate-400 hover:text-stone-950 hover:outline-slate-400 transition-colors"
           >
             Our Projects
           </a>
           <Link
             to="/join"
-            className="border border-accent text-accent text-lg md:text-xl lg:text-2xl px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-[99px] flex items-center justify-center"
+            className="outline outline-1 outline-offset-[-1px] outline-accent text-accent text-lg md:text-xl lg:text-2xl px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-[99px] flex items-center justify-center hover:bg-slate-400 hover:text-stone-950 hover:outline-slate-400 transition-colors"
           >
             Join Us
           </Link>

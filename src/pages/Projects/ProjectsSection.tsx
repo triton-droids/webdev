@@ -64,7 +64,10 @@ export default function ProjectsSection() {
   const project = projects[activeProject];
 
   return (
-    <section className="bg-main-bg py-12 md:py-16 lg:py-20 flex flex-col gap-10 md:gap-16 lg:gap-20 items-center justify-center">
+    <section
+      id="projects"
+      className="bg-main-bg py-12 md:py-16 lg:py-20 flex flex-col gap-10 md:gap-16 lg:gap-20 items-center justify-center"
+    >
       <div className="w-full px-6 md:px-12 lg:px-20 xl:px-[140px]">
         <SectionHeading>A Vision Set in Motion</SectionHeading>
       </div>

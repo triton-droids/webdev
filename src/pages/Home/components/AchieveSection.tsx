@@ -82,7 +82,7 @@ const slides: SlideData[] = [
 export default function AchieveSection() {
   return (
     <section className="bg-main-bg py-12 md:py-16 lg:py-20 flex flex-col gap-10 md:gap-16 lg:gap-20 items-center justify-center overflow-hidden">
-      <SectionHeading className="text-center px-6 md:px-12 lg:px-20 xl:px-[100px]">
+      <SectionHeading className="w-full text-left px-6 md:px-12 lg:px-20 xl:px-[100px]">
         How We Aim to Achieve Our Mission
       </SectionHeading>
 
