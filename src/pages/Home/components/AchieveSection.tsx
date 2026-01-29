@@ -112,14 +112,12 @@ export default function AchieveSection() {
                   </div>
 
                   <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-10 flex-1">
-                    <CardTitle className="font-normal leading-tight">
-                      {slide.title}
-                    </CardTitle>
+                    <CardTitle>{slide.title}</CardTitle>
                     <ul className="flex flex-col gap-4 md:gap-5 lg:gap-6 list-disc ml-6 md:ml-8 lg:ml-9">
                       {slide.points.map((point, pointIndex) => (
                         <li
                           key={pointIndex}
-                          className="text-base md:text-lg lg:text-xl xl:text-2xl text-main-text leading-relaxed"
+                          className="text-base font-light md:text-lg lg:text-xl xl:text-2xl text-main-text leading-relaxed"
                         >
                           <span className="text-accent">{point.highlight}</span>
                           {point.text}

@@ -67,7 +67,7 @@ An interactive carousel showcasing how Triton Droids aims to achieve its mission
 
 ### ProjectsSection
 
-**Location:** `src/pages/Home/components/ProjectsSection.tsx`
+**Location:** `src/pages/Projects/ProjectsSection.tsx`
 
 An interactive project showcase featuring three main projects:
 

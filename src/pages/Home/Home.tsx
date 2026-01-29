@@ -1,7 +1,7 @@
 import HeroSection from './components/HeroSection';
 import VisionSection from './components/VisionSection';
 import AchieveSection from './components/AchieveSection';
-import ProjectsSection from './components/ProjectsSection';
+import ProjectsSection from '../Projects/ProjectsSection';
 import RecruitmentSection from './components/RecruitmentSection';
 
 export default function Home() {

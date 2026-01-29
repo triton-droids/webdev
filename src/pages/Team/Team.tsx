@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
 import { teamMembers } from '../../data/teamMembers';
 import TeamMemberCard from '../../components/TeamMemberCard';
+import {
+  HeroHeading,
+  SectionHeading,
+  BodyText,
+} from '../../components/Typography';
 import { TeamMember } from '../../types/team';
 import teamPhoto from '../../imgs/hero/team-hero.png';
 
 // Shared layout constants for consistent spacing
 const SECTION_WRAPPER = 'py-16';
 const CONTAINER = 'w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8';
-const TITLE = 'text-5xl font-bold mb-8 text-center';
 const GRID = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14';
 
 export default function Team() {
@@ -31,14 +35,14 @@ export default function Team() {
   }, [selectedMember]);
 
   return (
-    <>
+    <div className="pb-24">
       <div className={CONTAINER}>
-        <h1 className="text-8xl font-bold">MEET THE TEAM</h1>
-        <p className="text-xl mt-6">
+        <HeroHeading>Meet The Team</HeroHeading>
+        <BodyText size="lg" className="mt-6">
           Meet our talented team! Each member brings unique skills and
           experiences, contributing to our collective success. Learn more about
           their backgrounds and expertise below.
-        </p>
+        </BodyText>
       </div>
 
       <div className={`my-8 ${CONTAINER}`}>
@@ -51,7 +55,9 @@ export default function Team() {
 
       <section className={SECTION_WRAPPER}>
         <div className={CONTAINER}>
-          <h2 className={TITLE}>OUR EXECUTIVES</h2>
+          <SectionHeading className="text-left mb-8">
+            Our Executives
+          </SectionHeading>
           <div className={GRID}>
             {executives.map((member) => (
               <TeamMemberCard
@@ -71,7 +77,9 @@ export default function Team() {
 
       <section className={`${SECTION_WRAPPER} mt-12`}>
         <div className={CONTAINER}>
-          <h2 className={TITLE}>OUR TEAM LEADS</h2>
+          <SectionHeading className="text-left mb-8">
+            Our Team Leads
+          </SectionHeading>
           <div className={GRID}>
             {teamLeads.map((member) => (
               <TeamMemberCard
@@ -88,6 +96,6 @@ export default function Team() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

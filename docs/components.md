@@ -126,8 +126,21 @@ For detailed information about each page and its components, see the [Pages Docu
 - **`HeroSection`** - Main hero section with background image and call-to-action buttons
 - **`VisionSection`** - Three-column vision cards section
 - **`AchieveSection`** - Carousel section explaining how the mission is achieved
-- **`ProjectsSection`** - Interactive projects showcase with icons and descriptions
 - **`RecruitmentSection`** - Recruitment status banner
+
+### Projects Page Components
+
+**Location:** `src/pages/Projects/`
+
+- **`ProjectsSection`** - Interactive projects overview (also used on Home page)
+
+**Location:** `src/pages/Projects/components/`
+
+- **`Projects`** - Main projects page component
+- **`ProjectHeroSection`** - Hero with title, description, and ASCII art
+- **`ProjectDetailCard`** - Reusable card for Rationale, Function, Approach, Progress
+- **`ProjectGallery`** - Image carousel using Embla Carousel
+- **`ModelViewer`** - 3D model viewer placeholder
 
 ### Join Page Components
 

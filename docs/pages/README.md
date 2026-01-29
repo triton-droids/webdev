@@ -15,7 +15,7 @@ Information about joining Triton Droids, including team descriptions, recruitmen
 **Route:** `/join`
 
 ### [Projects](./projects.md)
-Detailed information about Triton Droids' robotics projects (currently placeholder).
+Detailed information about Triton Droids' robotics projects, featuring the Humanoid Robot project with hero section, detail cards, model viewer, and gallery.
 
 **Route:** `/projects`
 
@@ -46,9 +46,17 @@ All pages are located in `src/pages/` and follow a consistent structure:
 ```
 src/pages/
   ├── PageName/
-  │   ├── PageName.tsx          # Main page component
+  │   ├── PageName.tsx           # Main page component
   │   └── components/            # Page-specific components (optional)
   │       └── ComponentName.tsx
+  ├── Projects/
+  │   ├── ProjectsSection.tsx    # Projects overview (used on Home page)
+  │   └── components/
+  │       ├── Projects.tsx       # Main projects page
+  │       ├── ProjectHeroSection.tsx
+  │       ├── ProjectDetailCard.tsx
+  │       ├── ProjectGallery.tsx
+  │       └── ModelViewer.tsx
 ```
 
 ## Routing
@@ -102,7 +110,7 @@ Pages should use Typography components from `src/components/Typography.tsx`:
 - ✅ **Home** - Fully implemented with multiple sections
 - ✅ **Join** - Fully implemented with comprehensive team information
 - ✅ **Sponsorship** - Fully implemented with sponsor information
-- 🚧 **Projects** - Placeholder, minimal content
+- ✅ **Projects** - Implemented with hero, detail cards, model viewer, and gallery
 - 🚧 **Team** - Basic structure, needs member cards
 - 🚧 **Advisor** - Basic structure, needs advisor cards
 - 🚧 **Alumni** - Basic structure, needs alumni cards

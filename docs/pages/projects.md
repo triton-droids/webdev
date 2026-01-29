@@ -1,47 +1,68 @@
-# Projects Page
+# Projects
 
-The Projects page provides detailed information about Triton Droids' various robotics projects.
+Projects are split into an overview page and separate project pages.
 
-**Location:** `src/pages/Projects/Projects.tsx`  
-**Route:** `/projects`
+**Routes:** `/projects` (index), `/projects/humanoid`, `/projects/learning-projects`, `/projects/robocup`
 
 ## Overview
 
-The Projects page is currently a placeholder page. It is intended to showcase detailed information about the organization's projects, including:
+- **Index** (`/projects`) – ProjectsSection with three project cards and Learn More links.
+- **Humanoid** (`/projects/humanoid`) – Hero, detail cards, 3D viewer, gallery.
+- **Learning Projects** (`/projects/learning-projects`) – Hero and description (placeholder).
+- **RoboCup** (`/projects/robocup`) – Hero, What is RoboCup and Our Goal cards.
 
-- **Humanoid Robot** - General-purpose humanoid robots
-- **Triton Pupper** - Robotic dog project
-- **RoboCup** - Competition participation
+## Page Structure
 
-## Current Status
-
-The page currently contains minimal content and is a placeholder for future development:
-
-```tsx
-export default function Projects() {
-  return <div>{/* Projects page content */}</div>;
-}
+```
+src/pages/Projects/
+  ├── ProjectsIndex.tsx          # /projects
+  ├── Humanoid.tsx               # /projects/humanoid
+  ├── LearningProjects.tsx       # /projects/learning-projects
+  ├── RoboCup.tsx                # /projects/robocup
+  ├── ProjectsSection.tsx        # Overview (Home + index)
+  └── components/
+      ├── Projects.tsx           # Re-exports ProjectsIndex
+      ├── ProjectHeroSection.tsx
+      ├── ProjectDetailCard.tsx
+      ├── ProjectGallery.tsx
+      └── ModelViewer.tsx
 ```
 
-## Future Implementation
+## Components
 
-This page should likely include:
-- Detailed project descriptions
-- Project timelines and milestones
-- Team information for each project
-- Technical specifications
-- Project images and media
-- Links to related resources
+### ProjectHeroSection
+
+Displays the project title, description, and ASCII art asset.
+
+### ProjectDetailCard
+
+Reusable card component with:
+
+- Icon (88px, centered)
+- Title (64px, gray #A3B2C2)
+- Description (24px, white)
+- Fixed width layout for alignment
+
+### ProjectGallery
+
+Image carousel using `embla-carousel-react` with:
+
+- Navigation arrows
+- Pagination dots
+- Smooth transitions
+
+### ModelViewer
+
+Placeholder for 3D model integration (Three.js, model-viewer, or Sketchfab).
 
 ## Related Components
 
-Project information is currently showcased in:
-- **Home Page** - `ProjectsSection` component provides an overview
-- Individual project pages may be created (e.g., `/projects/humanoid`, `/projects/pupper`, `/projects/robocup`)
+- **ProjectsSection** (`src/pages/Projects/ProjectsSection.tsx`) - Overview component used on Home page
 
 ## Assets
 
 Project-related assets are located in:
+
 - `src/assets/projects/` - Project icons and images
   - `humanoid-icon-blue.svg` / `humanoid-icon-gray.svg`
   - `pupper-icon-blue.svg` / `pupper-icon-gray.svg`
@@ -49,3 +70,10 @@ Project-related assets are located in:
   - `humanoid-image.jpg`
   - `pupper-image.jpg`
   - `robocup-image.png`
+  - `icons/rationale-icon.svg`
+  - `icons/function-icon.svg`
+  - `icons/approach-icon.svg`
+  - `icons/progress-icon.svg`
+  - `icons/what-is-robocup-icon.svg`
+  - `icons/our-goal-icon.svg`
+  - `hero/ascii-art.png`

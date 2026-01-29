@@ -1,0 +1,70 @@
+---
+description: Always reference and follow project documentation when making changes
+alwaysApply: false
+---
+
+# Using Project Documentation
+
+Always consult the project documentation in `docs/` before making changes or implementing features. The documentation is the source of truth for conventions, patterns, and project structure.
+
+## Documentation Structure
+
+- **`docs/development.md`** - Development setup, conventions, code quality standards, and workflow
+- **`docs/components.md`** - Reusable components, their props, usage examples, and patterns
+- **`docs/typography.md`** - Typography system components and usage
+- **`docs/pages/`** - Page-specific documentation for each route
+- **`docs/deployment.md`** - Deployment procedures and configuration
+
+## Before Making Changes
+
+1. **Read relevant documentation first** - Check the appropriate docs file before implementing features
+2. **Follow established patterns** - Use the examples and patterns shown in the documentation
+3. **Maintain consistency** - Ensure new code matches existing conventions documented
+
+## Key Conventions from Documentation
+
+### Typography
+
+- **Always use Typography components** from `src/components/Typography.tsx` instead of raw HTML
+- Use `HeroHeading` for h1, `SectionHeading` for h2, `CardTitle` for h3, `BodyText` for paragraphs
+- See `docs/typography.md` for details
+
+### Components
+
+- Check `docs/components.md` for existing components before creating new ones
+- Follow component patterns and prop interfaces documented
+- Use `Layout` component to wrap pages
+
+### Styling
+
+- Use Tailwind utility classes (prefer over custom CSS)
+- Use custom color tokens from `tailwind.config.js`: `bg-main-bg`, `text-main-text`, `text-muted-text`, `text-accent`
+- Mobile-first responsive design with breakpoints: `md:`, `lg:`, `xl:`, `2xl:`
+- See `docs/development.md` for styling conventions
+
+### Project Structure
+
+- Pages in `src/pages/PageName/PageName.tsx`
+- Page-specific components in `src/pages/PageName/components/`
+- Reusable components in `src/components/`
+- See `docs/pages/README.md` for page structure details
+
+### TypeScript
+
+- Define interfaces for all component props
+- Avoid `any` types
+- Use proper typing throughout
+- See `docs/development.md` for TypeScript conventions
+
+## When Adding New Features
+
+1. Check if similar functionality exists in `docs/components.md` or `docs/pages/`
+2. Follow the patterns and conventions documented
+3. Use existing components when possible
+4. Maintain consistency with documented structure and naming
+
+## When Modifying Existing Code
+
+1. Review relevant documentation to understand the current implementation
+2. Ensure changes align with documented conventions
+3. Update documentation if introducing new patterns or breaking changes

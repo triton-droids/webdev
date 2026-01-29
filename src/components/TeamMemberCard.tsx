@@ -8,13 +8,13 @@ interface TeamMemberCardProps {
 }
 
 // LinkedIn icon SVG - square with 'in' logo
-const LinkedInIcon = () => (
+const LinkedInIcon = ({ className }: { className?: string }) => (
   <svg
     width="18"
     height="18"
     viewBox="0 0 24 24"
     fill="currentColor"
-    className="inline-block"
+    className={className}
   >
     <rect width="24" height="24" fill="#000" rx="2" />
     <path
@@ -67,13 +67,34 @@ export default function TeamMemberCard({
           className="w-full rounded-t-card overflow-hidden bg-main-bg flex flex-col p-4"
           style={{ aspectRatio: '13 / 14' }}
         >
-          {/* Name - Bold White */}
-          <h2
-            id={nameId}
-            className="text-lg font-bold text-main-text leading-tight mb-0"
-          >
-            {member.name}
-          </h2>
+          {/* Name - Bold White with LinkedIn icon */}
+          <div className="flex items-center gap-2 min-h-[1.125rem]">
+            <h2
+              id={nameId}
+              className="text-lg font-bold text-main-text leading-none mb-0"
+            >
+              {member.name}
+            </h2>
+            {member.linkedin ? (
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-main-text shrink-0 flex items-center justify-center hover:opacity-80 transition-opacity [&>svg]:block"
+                aria-label={`${member.name} on LinkedIn`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <LinkedInIcon />
+              </a>
+            ) : (
+              <span
+                className="text-main-text shrink-0 flex items-center [&>svg]:block"
+                aria-hidden
+              >
+                <LinkedInIcon />
+              </span>
+            )}
+          </div>
 
           {/* Role - Yellow */}
           <p
@@ -83,10 +104,13 @@ export default function TeamMemberCard({
             {member.role}
           </p>
 
-          {/* Bio - shrunk to fit in fixed card, no scroll */}
+          {/* Bio - larger than collapsed, sized to fit card without scroll */}
           {member.bio && (
-            <div id={bioId} className="flex-1 overflow-hidden min-h-0">
-              <p className="text-[11px] leading-[1.2] text-main-text whitespace-pre-line">
+            <div
+              id={bioId}
+              className="flex-1 min-h-0 flex flex-col overflow-hidden"
+            >
+              <p className="text-sm leading-snug text-main-text whitespace-pre-line overflow-hidden">
                 {member.bio}
               </p>
             </div>
@@ -155,11 +179,27 @@ export default function TeamMemberCard({
           {member.role}
         </p>
 
-        {/* White Name Text with LinkedIn Icon */}
-        <div className="flex items-center justify-center gap-2">
-          <h3 className="text-xl font-bold text-main-text">{member.name}</h3>
-          {member.linkedin && (
-            <span className="text-main-text inline-flex items-center">
+        {/* White Name Text with LinkedIn icon */}
+        <div className="flex items-center justify-center gap-2 min-h-[1.125rem]">
+          <h3 className="text-xl font-bold text-main-text leading-none">
+            {member.name}
+          </h3>
+          {member.linkedin ? (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-main-text shrink-0 flex items-center justify-center hover:opacity-80 transition-opacity [&>svg]:block"
+              aria-label={`${member.name} on LinkedIn`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <LinkedInIcon />
+            </a>
+          ) : (
+            <span
+              className="text-main-text shrink-0 flex items-center [&>svg]:block"
+              aria-hidden
+            >
               <LinkedInIcon />
             </span>
           )}
