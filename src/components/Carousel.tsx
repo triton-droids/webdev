@@ -140,7 +140,7 @@ export default function Carousel<T = unknown>({
       <button
         onClick={onClick}
         disabled={!enabled}
-        className={`size-[66px] rounded-full border-4 border-muted-text flex items-center justify-center transition-all cursor-pointer shrink-0 ${
+        className={`flex size-10 md:size-12 lg:size-[66px] rounded-full border-2 lg:border-4 border-muted-text items-center justify-center transition-all cursor-pointer shrink-0 ${
           direction === 'left' ? '' : 'rotate-180'
         } ${enabled ? 'hover:border-main-text hover:bg-main-text/10' : 'opacity-50'}`}
         aria-label={direction === 'left' ? 'Previous slide' : 'Next slide'}
@@ -151,7 +151,7 @@ export default function Carousel<T = unknown>({
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="text-muted-text"
+          className="text-muted-text size-4 md:size-5 lg:size-6"
         >
           <path
             d="M15 18L9 12L15 6"
@@ -170,15 +170,15 @@ export default function Carousel<T = unknown>({
     selectedIndex: number,
     onDotClick: (index: number) => void
   ) => (
-    <div className="flex gap-[18px] items-center justify-center w-full mt-10">
+    <div className="flex gap-3 md:gap-3 lg:gap-[18px] items-center justify-center w-full mt-6 md:mt-8 lg:mt-10">
       {Array.from({ length: total }).map((_, i) => (
         <button
           key={i}
           onClick={() => onDotClick(i)}
           className={`rounded-full transition-all cursor-pointer ${
             i === selectedIndex
-              ? 'bg-main-text w-[55px] h-[18px]'
-              : 'border-2 border-muted-text size-[18px] hover:border-main-text'
+              ? 'bg-main-text w-10 md:w-10 lg:w-[55px] h-3 md:h-3 lg:h-[18px]'
+              : 'border-2 border-muted-text size-3 md:size-3 lg:size-[18px] hover:border-main-text'
           }`}
           aria-label={`Go to slide ${i + 1}`}
         />
@@ -187,9 +187,9 @@ export default function Carousel<T = unknown>({
   );
 
   return (
-    <div className={className}>
+    <div className={`w-full overflow-hidden ${className}`.trim()}>
       <div
-        className={`flex gap-8 items-center w-full ${containerClassName}`.trim()}
+        className={`flex gap-4 lg:gap-6 items-center w-full max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8 ${containerClassName}`.trim()}
       >
         {showArrows &&
           (renderArrowButton
@@ -200,10 +200,7 @@ export default function Carousel<T = unknown>({
                 !canScrollPrev && !emblaApi
               ))}
 
-        <div
-          className="flex-1 overflow-hidden max-w-[1400px] -ml-4 pl-4"
-          ref={emblaRef}
-        >
+        <div className="flex-1 overflow-hidden min-w-0" ref={emblaRef}>
           <div className="flex">
             {slides.map((slide, index) => {
               const tweenValue = tweenValues[index] ?? 0;
