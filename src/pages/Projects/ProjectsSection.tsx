@@ -37,14 +37,14 @@ const projects: ProjectData[] = [
     link: '/projects/humanoid',
   },
   {
-    id: 'pupper',
+    id: 'learning-projects',
     iconBlue: pupperIconBlue,
     iconGray: pupperIconGray,
-    title: 'Triton Pupper',
+    title: 'Learning Projects',
     description:
-      "The Triton Pupper Project is Triton Droids' newest initiative at inspiring undergraduate students to break boundaries with modern innovation. Next to developing a humanoid robot, the Triton Pupper Team is aiming to develop a robotic dog at the undergraduate level. The goals of this initiative include building a proof-of-concept out of the Petoi Bittle Dog, and then graduating to an industry-grade robotic dog that matches the sophistication of...",
+      'Learning projects at Triton Droids give members hands-on experience with robotics. More details coming soon.',
     image: pupperImage,
-    link: '/projects/pupper',
+    link: '/projects/learning-projects',
   },
   {
     id: 'robocup',

@@ -40,9 +40,9 @@ export default function Header() {
       label: 'Projects',
       // TODO: Add project paths to the dropdown items
       dropdown: [
-        { to: '/projects', label: 'Humanoid Robot' },
-        { to: '/projects', label: 'Triton Pupper' },
-        { to: '/projects', label: 'RoboCup' },
+        { to: '/projects/humanoid', label: 'Humanoid Robot' },
+        { to: '/projects/learning-projects', label: 'Learning Projects' },
+        { to: '/projects/robocup', label: 'RoboCup' },
       ],
     },
     { to: '/sponsorship', label: 'Sponsorship' },

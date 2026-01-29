@@ -3,7 +3,10 @@ import Layout from './components/Layout';
 import Home from './pages/Home/Home';
 import Join from './pages/Join/Join';
 import Team from './pages/Team/Team';
-import Projects from './pages/Projects/components/Projects';
+import ProjectsIndex from './pages/Projects/ProjectsIndex';
+import Humanoid from './pages/Projects/Humanoid';
+import LearningProjects from './pages/Projects/LearningProjects';
+import RoboCup from './pages/Projects/RoboCup';
 import Sponsorship from './pages/Sponsorship/Sponsorship';
 import Advisor from './pages/Advisor/Advisor';
 import Alumni from './pages/Alumni/Alumni';
@@ -15,7 +18,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/join" element={<Join />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects" element={<ProjectsIndex />} />
+        <Route path="/projects/humanoid" element={<Humanoid />} />
+        <Route
+          path="/projects/learning-projects"
+          element={<LearningProjects />}
+        />
+        <Route path="/projects/robocup" element={<RoboCup />} />
         <Route path="/sponsorship" element={<Sponsorship />} />
         <Route path="/advisor" element={<Advisor />} />
         <Route path="/alumni" element={<Alumni />} />

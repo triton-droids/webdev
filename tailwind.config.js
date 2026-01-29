@@ -28,6 +28,9 @@ export default {
         'body-lg': ['clamp(1.125rem, 2vw, 1.5rem)', { lineHeight: '1.5' }],
         body: ['clamp(1rem, 1.5vw, 1.25rem)', { lineHeight: '1.6' }],
       },
+      animation: {
+        'rotate-y-3d': 'rotate-y-3d 15s linear infinite',
+      },
     },
   },
   plugins: [],
