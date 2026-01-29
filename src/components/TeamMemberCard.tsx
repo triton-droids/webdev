@@ -104,10 +104,13 @@ export default function TeamMemberCard({
             {member.role}
           </p>
 
-          {/* Bio - shrunk to fit in fixed card, no scroll */}
+          {/* Bio - larger than collapsed, sized to fit card without scroll */}
           {member.bio && (
-            <div id={bioId} className="flex-1 overflow-hidden min-h-0">
-              <p className="text-[11px] leading-[1.2] text-main-text whitespace-pre-line">
+            <div
+              id={bioId}
+              className="flex-1 min-h-0 flex flex-col overflow-hidden"
+            >
+              <p className="text-sm leading-snug text-main-text whitespace-pre-line overflow-hidden">
                 {member.bio}
               </p>
             </div>
