@@ -35,6 +35,25 @@ npm run build
 npm run preview
 ```
 
+## Testing
+
+This project includes end-to-end tests using Playwright to ensure UI components work correctly.
+
+### Running Tests
+
+```bash
+# Run all tests
+npm run test:e2e
+
+# Run tests with UI mode (interactive)
+npm run test:e2e:ui
+
+# Run visual tests only
+npm run test:e2e:visual
+```
+
+For detailed information about the testing setup, see [Testing Documentation](./docs/testing.md).
+
 ## Dev Container
 
 This project includes a Dev Container configuration. To use it:
@@ -86,6 +105,7 @@ Comprehensive documentation is available in the [`docs/`](./docs/) folder:
 - **[Components](./docs/components.md)** - Overview of reusable components and their usage
 - **[Pages](./docs/pages/README.md)** - Detailed documentation for each page in the website
 - **[Development Guide](./docs/development.md)** - Development setup, conventions, and best practices
+- **[Testing Guide](./docs/testing.md)** - End-to-end testing with Playwright, including setup, writing tests, and CI/CD integration
 - **[Deployment Guide](./docs/deployment.md)** - How to deploy the website to production
 
 ### Quick Typography Reference

@@ -9,7 +9,8 @@
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "ms-playwright.playwright"
       ],
       "settings": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -39,6 +40,6 @@
       }
     }
   },
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "npm install && npx playwright install --with-deps chromium",
   "remoteUser": "node"
 }

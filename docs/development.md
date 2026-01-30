@@ -41,6 +41,11 @@ The application will be available at `http://localhost:5173`
 - **`npm run lint:fix`** - Automatically fix ESLint issues
 - **`npm run format`** - Format code with Prettier
 - **`npm run format:check`** - Check code formatting
+- **`npm run test:e2e`** - Run end-to-end tests with Playwright
+- **`npm run test:e2e:ui`** - Run tests with interactive UI
+- **`npm run test:e2e:visual`** - Run visual regression tests only
+
+For detailed testing documentation, see [Testing Guide](./testing.md).
 
 ### Code Quality
 
