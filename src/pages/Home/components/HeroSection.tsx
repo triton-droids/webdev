@@ -1,18 +1,15 @@
 import { Link } from 'react-router-dom';
 
-import heroBackground from '../../../assets/hero-background.png';
 import { HeroHeading, BodyText } from '../../../components/Typography';
+import AsciiHeadHero from './AsciiHeadHero';
 
 export default function HeroSection() {
   return (
     <section className="relative flex items-center justify-center w-full min-h-[50vh] lg:min-h-[70vh] px-6 md:px-12 lg:px-16 xl:px-20 bg-main-bg">
-      {/* Background image */}
-      <div className="absolute inset-0 mix-blend-lighten overflow-hidden pointer-events-none">
-        <img
-          alt=""
-          className="absolute h-full right-0 top-0 max-w-none object-contain object-right"
-          src={heroBackground}
-        />
+      <div className="absolute inset-0 mix-blend-lighten overflow-hidden pointer-events-none flex items-center justify-end">
+        <div className="absolute h-full right-0 top-0 flex items-center">
+          <AsciiHeadHero />
+        </div>
       </div>
 
       {/* Content - max-w-7xl = 1280px, consistent with other sections */}
