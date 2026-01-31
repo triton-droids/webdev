@@ -203,7 +203,7 @@ export function renderFrame(
   const fov = 2.5;
   const distance = 1.4;
   const aspect = 0.5;
-  const scale = 0.72;
+  const scale = 0.88;
 
   const transformed: Vec3[] = vertices.map(([vx, vy, vz]) =>
     rotateVertex(vx, vy, vz, angleX, angleY)
