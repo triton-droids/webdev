@@ -1,10 +1,12 @@
 import { HeroHeading, BodyText } from '../../../components/Typography';
+import ModelViewer from './ModelViewer';
 
 interface ProjectHeroSectionProps {
   title: string;
   description: string;
   asciiArtAsset?: string;
   asciiArtText?: string;
+  modelViewerUrl?: string;
 }
 
 export default function ProjectHeroSection({
@@ -12,6 +14,7 @@ export default function ProjectHeroSection({
   description,
   asciiArtAsset,
   asciiArtText,
+  modelViewerUrl,
 }: ProjectHeroSectionProps) {
   return (
     <section className="flex flex-col gap-10 items-start px-6 md:px-12 lg:px-16 xl:px-20 w-full max-w-7xl mx-auto">
@@ -23,7 +26,9 @@ export default function ProjectHeroSection({
       </div>
 
       <div className="w-full rounded-[40px] overflow-hidden bg-[#1A1A1A]">
-        {asciiArtAsset ? (
+        {modelViewerUrl ? (
+          <ModelViewer modelUrl={modelViewerUrl} alt={`${title} 3D Model`} />
+        ) : asciiArtAsset ? (
           <img
             src={asciiArtAsset}
             alt="ASCII Art"

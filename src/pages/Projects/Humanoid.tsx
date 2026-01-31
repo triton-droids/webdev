@@ -1,12 +1,10 @@
 import ProjectHeroSection from './components/ProjectHeroSection';
 import ProjectDetailCard from './components/ProjectDetailCard';
-import ModelViewer from './components/ModelViewer';
 import ProjectGallery from './components/ProjectGallery';
 import rationaleIcon from '../../assets/projects/icons/rationale-icon.svg';
 import functionIcon from '../../assets/projects/icons/function-icon.svg';
 import approachIcon from '../../assets/projects/icons/approach-icon.svg';
 import progressIcon from '../../assets/projects/icons/progress-icon.svg';
-import asciiArtImage from '../../assets/projects/hero/ascii-art.png';
 import lowerBodyModel from '../../assets/models/1.26.26 Lower Body.glb';
 
 const humanoidProject = {
@@ -54,7 +52,7 @@ export default function Humanoid() {
         <ProjectHeroSection
           title={humanoidProject.title}
           description={humanoidProject.description}
-          asciiArtAsset={asciiArtImage}
+          modelViewerUrl={humanoidProject.modelUrl}
         />
         <div className="flex flex-col gap-12 md:gap-16 w-full max-w-[1400px] mx-auto px-6 md:px-20 lg:px-[148px]">
           {humanoidProject.sections.map((section, index) => (
@@ -65,13 +63,6 @@ export default function Humanoid() {
               description={section.description}
             />
           ))}
-        </div>
-        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-20 lg:px-[148px]">
-          <ModelViewer
-            modelUrl={humanoidProject.modelUrl}
-            fallbackImage={undefined}
-            alt="Humanoid Robot 3D Model"
-          />
         </div>
         <ProjectGallery images={humanoidProject.galleryImages} />
       </div>
