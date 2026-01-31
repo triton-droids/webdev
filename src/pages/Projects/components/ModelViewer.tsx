@@ -1,4 +1,5 @@
-import { SectionHeading, BodyText } from '../../../components/Typography';
+import '@google/model-viewer';
+import { BodyText } from '../../../components/Typography';
 
 interface ModelViewerProps {
   modelUrl?: string;
@@ -12,19 +13,25 @@ export default function ModelViewer({
   alt = '3D Model',
 }: ModelViewerProps) {
   return (
-    <div className="w-full rounded-[24px] overflow-hidden bg-[#2A2B2D] p-8 md:p-12">
+    <div
+      className={`w-full rounded-[24px] overflow-hidden shadow-xl ring-1 ring-white/[0.06] ${modelUrl ? 'p-0 flex items-center justify-center h-[500px] md:h-[600px] bg-[#141416]' : 'p-8 md:p-12 bg-[#2A2B2D]'}`}
+    >
       {modelUrl ? (
-        <div className="w-full h-[500px] md:h-[600px] rounded-[16px] overflow-hidden bg-[#1A1A1A] flex items-center justify-center">
-          {/* Placeholder for 3D model - can be replaced with Three.js, model-viewer, or Sketchfab embed */}
-          <div className="text-center text-main-text">
-            <SectionHeading className="text-xl mb-4">
-              3D Interactive Model
-            </SectionHeading>
-            <BodyText size="sm" className="text-muted-text text-sm">
-              {modelUrl ? 'Model loading...' : 'Model URL not provided'}
-            </BodyText>
-          </div>
-        </div>
+        <model-viewer
+          src={modelUrl}
+          alt={alt}
+          camera-controls
+          auto-rotate
+          auto-rotate-delay="2000"
+          rotation-per-second="30deg"
+          shadow-intensity="0.5"
+          shadow-softness="0.9"
+          exposure="1.25"
+          tone-mapping="neutral"
+          interaction-prompt="none"
+          className="block w-full h-full max-w-full max-h-full min-w-0 min-h-0"
+          style={{ width: '100%', height: '100%' }}
+        />
       ) : fallbackImage ? (
         <div className="w-full rounded-[16px] overflow-hidden">
           <img
