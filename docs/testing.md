@@ -5,12 +5,15 @@ This document provides comprehensive information about the end-to-end (E2E) test
 ## Table of Contents
 
 - [Overview](#overview)
+- [Setup Summary](#setup-summary)
 - [Setup](#setup)
 - [Running Tests](#running-tests)
 - [Test Structure](#test-structure)
 - [Writing Tests](#writing-tests)
 - [CI/CD Integration](#cicd-integration)
 - [Troubleshooting](#troubleshooting)
+- [Maintenance](#maintenance)
+- [Future Enhancements](#future-enhancements)
 
 ## Overview
 
@@ -30,6 +33,41 @@ Our test suite covers:
 3. **Responsive behavior** - Components work across different viewport sizes
 4. **User interactions** - Carousels, navigation, and interactive elements
 5. **Component rendering** - Proper display of text highlighting and styling
+
+### Test Statistics
+
+- **Total Tests**: 9
+- **Test Files**: 5
+- **Browser Coverage**: Chromium
+- **Execution Time**: ~9 seconds locally
+- **Screenshots Generated**: 15+ visual regression captures
+
+## Setup Summary
+
+### What Was Added
+
+**Documentation**
+
+- [testing.md](./testing.md) (this document) - Setup, running tests, writing tests, CI/CD, troubleshooting, best practices
+- [quick-start-testing.md](./quick-start-testing.md) - Quick reference for commands, templates, assertions, debugging
+- README.md - Testing section with quick commands
+- [development.md](./development.md) - Testing scripts in development workflow
+
+**Configuration**
+
+- **.gitignore**: `test-results/`, `playwright-report/`, `e2e/screenshots/`
+- **.devcontainer/devcontainer.json**: Playwright VS Code extension; `postCreateCommand` runs `npm install && npx playwright install --with-deps chromium`
+- **.github/workflows/ci.yml**: `test` job installs Playwright browsers, runs E2E tests, uploads reports/screenshots on failure; runs on PRs, pushes to main, manual dispatch
+
+**NPM Scripts** (package.json)
+
+```json
+{
+  "test:e2e": "playwright test",
+  "test:e2e:ui": "playwright test --ui",
+  "test:e2e:visual": "playwright test carousel-visual.spec.ts"
+}
+```
 
 ## Setup
 
@@ -102,6 +140,14 @@ e2e/
 ├── project-section.spec.ts          # Project section tests
 └── screenshots/                     # Generated screenshots (gitignored)
 ```
+
+### Test Files
+
+- **carousel-typography.spec.ts** - Font size, line height, font weight, text containment
+- **carousel-visual.spec.ts** - Full carousel screenshots, responsive behavior, multiple viewports
+- **carousel-closeup.spec.ts** - Close-up card views, multiple slide captures
+- **join-carousel-all-slides.spec.ts** - All 4 slides with highlighting, navigation
+- **project-section.spec.ts** - Arrow direction, Learn More link
 
 ### Configuration
 
@@ -264,20 +310,23 @@ test('Works on different viewport sizes', async ({ page }) => {
 
 ## CI/CD Integration
 
-Tests are automatically run in the CI/CD pipeline on:
+### Workflow Triggers
 
-- Pull requests
+- Pull requests (all tests must pass)
 - Pushes to main branch
 - Manual workflow dispatch
 
-### GitHub Actions Configuration
+### GitHub Actions Jobs
 
-The tests run in the CI pipeline with:
+1. **Build Job** (existing) - Checkout, install deps, lint, build production bundle
+2. **Test Job** - Checkout, install deps, install Playwright browsers, run E2E tests; on failure uploads HTML report and screenshots as artifacts
 
-- Chromium browser only (for speed)
+### CI Configuration
+
+- Chromium only (for speed)
 - Retries on failure (2 retries in CI)
-- Parallel execution disabled in CI for stability
-- Artifacts uploaded on failure
+- Single worker in CI for stability
+- Artifact retention: 7 days
 
 ### Local vs CI Behavior
 
@@ -376,6 +425,46 @@ This provides:
 - Screenshots and traces
 - Detailed error messages
 - Execution timelines
+
+### Before Committing
+
+Run:
+
+```bash
+npm run lint
+npm run test:e2e
+```
+
+## Maintenance
+
+### Adding New Tests
+
+1. Create test file in `e2e/` with naming convention `feature-name.spec.ts`
+2. Use existing tests as templates
+3. Update this documentation if adding new patterns
+
+### Updating Tests
+
+When UI changes:
+
+1. Update affected test expectations
+2. Regenerate screenshots if needed
+3. Run tests locally before pushing
+4. Ensure CI passes
+
+### Monitoring
+
+- Check CI status on pull requests
+- Review test reports on failures
+- Download CI artifacts to debug failures
+
+## Future Enhancements
+
+- **Visual regression** - Snapshot comparison, pixel-perfect visual diffing
+- **Accessibility** - axe-core, ARIA and keyboard navigation tests
+- **Performance** - Lighthouse CI, Core Web Vitals
+- **Cross-browser** - Firefox and WebKit, mobile browsers
+- **Component testing** - Unit tests for complex components, isolated testing
 
 ## Resources
 
